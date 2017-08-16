@@ -7,12 +7,6 @@ WindRect
 ビルド済み配布物
 ----------------
 
-以下の場所からダウンロードできます。
-
-Vector
-http://www.vector.co.jp/soft/winnt/amuse/se503652.html
-
-うちのサイト
 http://stackprobe.dip.jp/WindRect
 
 
