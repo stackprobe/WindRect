@@ -7,7 +7,7 @@ namespace Charlotte
 {
 	public class GlobalProcMtx
 	{
-		private static System.Threading.Mutex _globalProcMtx;
+		private static System.Threading.Mutex ProcMtx;
 
 		public static bool Create(string ident, string title)
 		{
@@ -26,46 +26,68 @@ namespace Charlotte
 				);
 
 			bool createdNew;
-			_globalProcMtx = new System.Threading.Mutex(false, @"Global\Global_" + ident, out createdNew, security);
+			ProcMtx = new System.Threading.Mutex(false, @"Global\Global_" + ident, out createdNew, security);
 
-			if (_globalProcMtx.WaitOne(0) == false)
+			if (ProcMtx.WaitOne(0) == false)
 			{
+				ProcMtx.Close();
+				ProcMtx = null;
+
 				System.Windows.Forms.MessageBox.Show(
 					"Already started on the other logon session !",
 					title + " / Error",
 					System.Windows.Forms.MessageBoxButtons.OK,
 					System.Windows.Forms.MessageBoxIcon.Error
 					);
-
-				_globalProcMtx.Close();
-				_globalProcMtx = null;
 
 				return false;
 			}
 			return true;
 #else
-			try
+			for (int c = 0; ; c++)
 			{
-				_globalProcMtx = new System.Threading.Mutex(false, @"Global\Global_" + ident);
-
-				if (_globalProcMtx.WaitOne(0) == false)
+				try
 				{
-					_globalProcMtx.Close();
-					_globalProcMtx = null;
+					ProcMtx = new System.Threading.Mutex(false, @"Global\Global_" + ident);
 
-					throw null;
+					if (ProcMtx.WaitOne(0))
+						break;
+
+					ProcMtx.Close();
+					ProcMtx = null;
+
+					Program.PostMessage(new Exception());
 				}
-			}
-			catch
-			{
-				System.Windows.Forms.MessageBox.Show(
-					"Already started on the other logon session !",
-					title + " / Error",
-					System.Windows.Forms.MessageBoxButtons.OK,
-					System.Windows.Forms.MessageBoxIcon.Error
-					);
+				catch (Exception e)
+				{
+					Program.PostMessage(e);
+				}
 
-				return false;
+				CloseProcMtx();
+
+				if (8 < c)
+				{
+					System.Windows.Forms.MessageBox.Show(
+						"Already started on the other logon session !",
+						title + " / Error",
+						System.Windows.Forms.MessageBoxButtons.OK,
+						System.Windows.Forms.MessageBoxIcon.Error
+						);
+
+					return false;
+				}
+
+				{
+					int millis;
+
+					using (System.Security.Cryptography.RNGCryptoServiceProvider cRnd = new System.Security.Cryptography.RNGCryptoServiceProvider())
+					{
+						byte[] crByte = new byte[1];
+						cRnd.GetBytes(crByte);
+						millis = (int)crByte[0];
+					}
+					System.Threading.Thread.Sleep(millis);
+				}
 			}
 			return true;
 #endif
@@ -73,9 +95,18 @@ namespace Charlotte
 
 		public static void Release()
 		{
-			_globalProcMtx.ReleaseMutex();
-			_globalProcMtx.Close();
-			_globalProcMtx = null;
+			CloseProcMtx();
+		}
+
+		private static void CloseProcMtx()
+		{
+			try { ProcMtx.ReleaseMutex(); }
+			catch { }
+
+			try { ProcMtx.Close(); }
+			catch { }
+
+			ProcMtx = null;
 		}
 	}
 }
