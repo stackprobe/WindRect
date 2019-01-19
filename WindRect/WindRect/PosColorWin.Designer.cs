@@ -319,6 +319,7 @@
 			this.TopMost = true;
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PosWin_FormClosed);
 			this.Load += new System.EventHandler(this.PosColorWin_Load);
+			this.Shown += new System.EventHandler(this.PosColorWin_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

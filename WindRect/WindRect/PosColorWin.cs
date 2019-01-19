@@ -30,6 +30,11 @@ namespace WindRect
 			// noop
 		}
 
+		private void PosColorWin_Shown(object sender, EventArgs e)
+		{
+			Tools.PostShown(this);
+		}
+
 		private void PosWin_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			this.SaveData();

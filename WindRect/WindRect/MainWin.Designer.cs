@@ -33,10 +33,10 @@
 			this.TaskIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.TaskMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-			this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.右クリックを抑止するRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+			this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.TaskMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -54,41 +54,41 @@
             this.toolStripMenuItem2,
             this.終了XToolStripMenuItem});
 			this.TaskMenu.Name = "TaskMenu";
-			this.TaskMenu.Size = new System.Drawing.Size(119, 76);
+			this.TaskMenu.Size = new System.Drawing.Size(115, 76);
 			// 
 			// 追加AToolStripMenuItem
 			// 
 			this.追加AToolStripMenuItem.Name = "追加AToolStripMenuItem";
-			this.追加AToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+			this.追加AToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
 			this.追加AToolStripMenuItem.Text = "追加(&A)";
 			this.追加AToolStripMenuItem.Click += new System.EventHandler(this.追加AToolStripMenuItem_Click);
-			// 
-			// toolStripMenuItem2
-			// 
-			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(115, 6);
-			// 
-			// 終了XToolStripMenuItem
-			// 
-			this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
-			this.終了XToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-			this.終了XToolStripMenuItem.Text = "終了(&X)";
-			this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
 			// 
 			// 設定SToolStripMenuItem
 			// 
 			this.設定SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.右クリックを抑止するRToolStripMenuItem});
 			this.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem";
-			this.設定SToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+			this.設定SToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
 			this.設定SToolStripMenuItem.Text = "設定(&S)";
 			// 
 			// 右クリックを抑止するRToolStripMenuItem
 			// 
 			this.右クリックを抑止するRToolStripMenuItem.Name = "右クリックを抑止するRToolStripMenuItem";
-			this.右クリックを抑止するRToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+			this.右クリックを抑止するRToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
 			this.右クリックを抑止するRToolStripMenuItem.Text = "右クリックメニューを抑止する(&R)";
 			this.右クリックを抑止するRToolStripMenuItem.Click += new System.EventHandler(this.右クリックを抑止するRToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 6);
+			// 
+			// 終了XToolStripMenuItem
+			// 
+			this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
+			this.終了XToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+			this.終了XToolStripMenuItem.Text = "終了(&X)";
+			this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
 			// 
 			// MainWin
 			// 
@@ -97,6 +97,7 @@
 			this.ClientSize = new System.Drawing.Size(300, 300);
 			this.ContextMenuStrip = this.TaskMenu;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Location = new System.Drawing.Point(-400, -400);
 			this.Name = "MainWin";
 			this.ShowInTaskbar = false;

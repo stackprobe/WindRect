@@ -67,6 +67,8 @@ namespace WindRect
 		private void EditTextWin_Shown(object sender, EventArgs e)
 		{
 			this.LoadData();
+
+			Tools.PostShown(this);
 		}
 
 		private void EditTextWin_FormClosed(object sender, FormClosedEventArgs e)

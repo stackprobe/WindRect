@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RectWin));
 			this.RClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.位置と色PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,50 +62,50 @@
             this.toolStripMenuItem3,
             this.アプリケーションAToolStripMenuItem});
 			this.RClickMenu.Name = "TaskMenu";
-			this.RClickMenu.Size = new System.Drawing.Size(226, 176);
+			this.RClickMenu.Size = new System.Drawing.Size(206, 176);
 			// 
 			// 位置と色PToolStripMenuItem
 			// 
 			this.位置と色PToolStripMenuItem.Name = "位置と色PToolStripMenuItem";
-			this.位置と色PToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.位置と色PToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.位置と色PToolStripMenuItem.Text = "位置とサイズと色の変更(&P)";
 			this.位置と色PToolStripMenuItem.Click += new System.EventHandler(this.位置と色PToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(222, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 6);
 			// 
 			// 常に手前に表示TToolStripMenuItem
 			// 
 			this.常に手前に表示TToolStripMenuItem.Name = "常に手前に表示TToolStripMenuItem";
-			this.常に手前に表示TToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.常に手前に表示TToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.常に手前に表示TToolStripMenuItem.Text = "常に手前に表示(&T)";
 			this.常に手前に表示TToolStripMenuItem.Click += new System.EventHandler(this.常に手前に表示TToolStripMenuItem_Click);
 			// 
 			// ドラッグで移動MToolStripMenuItem
 			// 
 			this.ドラッグで移動MToolStripMenuItem.Name = "ドラッグで移動MToolStripMenuItem";
-			this.ドラッグで移動MToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.ドラッグで移動MToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.ドラッグで移動MToolStripMenuItem.Text = "ドラッグで移動(&M)";
 			this.ドラッグで移動MToolStripMenuItem.Click += new System.EventHandler(this.ドラッグで移動MToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 6);
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(202, 6);
 			// 
 			// 追加AToolStripMenuItem
 			// 
 			this.追加AToolStripMenuItem.Name = "追加AToolStripMenuItem";
-			this.追加AToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.追加AToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.追加AToolStripMenuItem.Text = "追加(&A)";
 			this.追加AToolStripMenuItem.Click += new System.EventHandler(this.追加AToolStripMenuItem_Click);
 			// 
 			// 複製DToolStripMenuItem
 			// 
 			this.複製DToolStripMenuItem.Name = "複製DToolStripMenuItem";
-			this.複製DToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.複製DToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.複製DToolStripMenuItem.Text = "複製(&D)";
 			this.複製DToolStripMenuItem.Click += new System.EventHandler(this.複製DToolStripMenuItem_Click);
 			// 
@@ -113,33 +114,33 @@
 			this.終了XToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.剥がすCToolStripMenuItem});
 			this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
-			this.終了XToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.終了XToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.終了XToolStripMenuItem.Text = "剥がす(&C)";
 			// 
 			// 剥がすCToolStripMenuItem
 			// 
 			this.剥がすCToolStripMenuItem.Name = "剥がすCToolStripMenuItem";
-			this.剥がすCToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+			this.剥がすCToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.剥がすCToolStripMenuItem.Text = "剥がす(&C)";
 			this.剥がすCToolStripMenuItem.Click += new System.EventHandler(this.閉じるCToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem3
 			// 
 			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-			this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 6);
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(202, 6);
 			// 
 			// アプリケーションAToolStripMenuItem
 			// 
 			this.アプリケーションAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.終了XToolStripMenuItem1});
 			this.アプリケーションAToolStripMenuItem.Name = "アプリケーションAToolStripMenuItem";
-			this.アプリケーションAToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+			this.アプリケーションAToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
 			this.アプリケーションAToolStripMenuItem.Text = "アプリケーション(&A)";
 			// 
 			// 終了XToolStripMenuItem1
 			// 
 			this.終了XToolStripMenuItem1.Name = "終了XToolStripMenuItem1";
-			this.終了XToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
+			this.終了XToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
 			this.終了XToolStripMenuItem1.Text = "終了(&X)";
 			this.終了XToolStripMenuItem1.Click += new System.EventHandler(this.終了XToolStripMenuItem1_Click);
 			// 
@@ -157,6 +158,10 @@
 			this.RectText.Size = new System.Drawing.Size(115, 20);
 			this.RectText.TabIndex = 1;
 			this.RectText.Text = "準備しています...";
+			this.RectText.DoubleClick += new System.EventHandler(this.RectText_DoubleClick);
+			this.RectText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseDown);
+			this.RectText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseMove);
+			this.RectText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseUp);
 			// 
 			// RectWin
 			// 
@@ -166,6 +171,7 @@
 			this.ContextMenuStrip = this.RClickMenu;
 			this.Controls.Add(this.RectText);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "RectWin";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -173,6 +179,7 @@
 			this.Activated += new System.EventHandler(this.RectWin_Activated);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RectWin_FormClosed);
 			this.Load += new System.EventHandler(this.RectWin_Load);
+			this.DoubleClick += new System.EventHandler(this.RectWin_DoubleClick);
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectWin_MouseDown);
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RectWin_MouseMove);
 			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectWin_MouseUp);

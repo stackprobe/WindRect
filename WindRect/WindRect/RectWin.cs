@@ -255,6 +255,21 @@ namespace WindRect
 			{ }
 		}
 
+		private void RectText_MouseDown(object sender, MouseEventArgs e)
+		{
+			this.RectWin_MouseDown(null, e);
+		}
+
+		private void RectText_MouseMove(object sender, MouseEventArgs e)
+		{
+			this.RectWin_MouseMove(null, e);
+		}
+
+		private void RectText_MouseUp(object sender, MouseEventArgs e)
+		{
+			this.RectWin_MouseUp(null, e);
+		}
+
 		private bool MT_Enabled;
 		private bool MT_Busy;
 		private long MT_Count;
@@ -327,6 +342,23 @@ namespace WindRect
 				this.ContextMenuStrip = null;
 			else
 				this.ContextMenuStrip = this.BkContextMenuStrip;
+		}
+
+		private void RectWin_DoubleClick(object sender, EventArgs e)
+		{
+			if (this.MT_Enabled)
+				return;
+
+			using (QuickEditTextWin f = new QuickEditTextWin())
+			{
+				f.ShowDialog();
+			}
+			this.UpdateUi();
+		}
+
+		private void RectText_DoubleClick(object sender, EventArgs e)
+		{
+			this.RectWin_DoubleClick(null, null);
 		}
 	}
 }
