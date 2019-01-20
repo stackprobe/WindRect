@@ -30,12 +30,10 @@ namespace WindRect
 		#endregion
 
 		private Gnd.RectInfo RI;
-		private bool OnBootMode;
 
-		public RectWin(Gnd.RectInfo ri, bool onBootMode = false)
+		public RectWin(Gnd.RectInfo ri)
 		{
 			this.RI = ri;
-			this.OnBootMode = onBootMode;
 			this.RI.Win = this;
 
 			InitializeComponent();
@@ -57,16 +55,15 @@ namespace WindRect
 			this.UpdateUi();
 			this.UpdateUi_MainWin();
 
-			if (this.OnBootMode)
-			{
-				this.MT_Enabled = true;
-				this.MainTimer.Enabled = true;
-			}
+			this.MT_Enabled = true;
+			this.MainTimer.Interval = 20;
+			this.MainTimer.Enabled = true;
 		}
 
 		private void RectWin_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			this.MT_Enabled = false;
+			this.MainTimer.Interval = 100; // 2bs
 			this.MainTimer.Enabled = false;
 		}
 
@@ -105,7 +102,7 @@ namespace WindRect
 
 			try
 			{
-				if (this.RI.Text == "")
+				if (string.IsNullOrEmpty(this.RI.Text))
 					throw null;
 
 				string text = this.RI.Text;
@@ -285,18 +282,21 @@ namespace WindRect
 			{
 				switch (this.MT_Count)
 				{
-					case 15:
-						if (Gnd.I.AutoReupdateUi)
-							this.TopMost = false;
+					case 2:
+						this.TopMost = false; // 2bs 一旦リセット
 						break;
 
-					case 16:
-						if (Gnd.I.AutoReupdateUi)
-							this.UpdateUi();
+					case 3:
+						this.UpdateUi(); // 2bs 再設定
 						break;
 
-					case 17:
+					case 4:
+						this.UpdateUi_MainWin(); // 2bs 再設定
+						break;
+
+					case 5:
 						this.MT_Enabled = false;
+						this.MainTimer.Interval = 100; // 2bs
 						this.MainTimer.Enabled = false;
 						break;
 				}
@@ -349,11 +349,24 @@ namespace WindRect
 			if (this.MT_Enabled)
 				return;
 
-			using (QuickEditTextWin f = new QuickEditTextWin())
+			if (Gnd.I.DoubleClickOff)
+				return;
+
+			using (QuickEditTextWin f = new QuickEditTextWin(this, this.RI.Text))
 			{
 				f.ShowDialog();
+
+				string text = f.RetText;
+
+				if (text != this.RI.Text)
+				{
+					text = text.Trim();
+
+					this.RI.Text = text;
+					Gnd.I.AdjustToTextSize = true;
+					this.UpdateUi();
+				}
 			}
-			this.UpdateUi();
 		}
 
 		private void RectText_DoubleClick(object sender, EventArgs e)

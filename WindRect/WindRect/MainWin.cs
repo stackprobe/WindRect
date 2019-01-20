@@ -51,20 +51,9 @@ namespace WindRect
 			this.Visible = false;
 			Gnd.I.LoadData();
 
-			bool onBootMode = false;
-
-			{
-				uint tick = (uint)Environment.TickCount;
-
-				if (tick < 600000u) // ? 電源投入から10分未満 -> ログオン直後と見なす。
-				{
-					onBootMode = true;
-				}
-			}
-
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{
-				new RectWin(ri, onBootMode).Show();
+				new RectWin(ri).Show();
 			}
 			this.TaskIcon.Visible = true;
 
@@ -98,9 +87,16 @@ namespace WindRect
 			this.UpdateUi();
 		}
 
+		private void ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Gnd.I.DoubleClickOff = Gnd.I.DoubleClickOff == false;
+			this.UpdateUi();
+		}
+
 		private void UpdateUi()
 		{
 			this.右クリックを抑止するRToolStripMenuItem.Checked = Gnd.I.RightClickOff;
+			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Checked = Gnd.I.DoubleClickOff;
 
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{

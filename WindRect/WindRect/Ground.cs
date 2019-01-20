@@ -28,11 +28,13 @@ namespace WindRect
 		}
 
 		public readonly string ESC_NEW_LINE = "${NEW-LINE}";
+		public readonly string RECT_STARTER = "/RECT/s";
 		public readonly string RECT_ENDER = "/RECT/e";
 		public readonly string DEF_FONT = "メイリオ";
 
 		// Common {
 		public bool RightClickOff = false;
+		public bool DoubleClickOff = false;
 		public bool AutoReupdateUi = false; // 隠し設定
 		// }
 
@@ -74,7 +76,7 @@ namespace WindRect
 				this.WinH = 300;
 				this.WinColorR = 0;
 				this.WinColorG = 0;
-				this.WinColorB = 0;
+				this.WinColorB = 48;
 				this.MostTop = true;
 				this.MovableFlag = true;
 				this.ImageFile = "";
@@ -132,8 +134,12 @@ namespace WindRect
 
 				// Common {
 				this.RightClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+				this.DoubleClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.AutoReupdateUi = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				// }
+
+				if (lines[i++] != Gnd.I.RECT_STARTER)
+					throw null;
 
 				while (i < lines.Length)
 				{
@@ -182,8 +188,11 @@ namespace WindRect
 
 				// Common {
 				lines.Add("" + (this.RightClickOff ? 1 : 0));
+				lines.Add("" + (this.DoubleClickOff ? 1 : 0));
 				lines.Add("" + (this.AutoReupdateUi ? 1 : 0));
 				// }
+
+				lines.Add(Gnd.I.RECT_STARTER);
 
 				foreach (RectInfo ri in this.RectInfoList)
 				{

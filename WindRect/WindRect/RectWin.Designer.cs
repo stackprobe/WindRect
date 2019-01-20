@@ -135,7 +135,7 @@
             this.終了XToolStripMenuItem1});
 			this.アプリケーションAToolStripMenuItem.Name = "アプリケーションAToolStripMenuItem";
 			this.アプリケーションAToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-			this.アプリケーションAToolStripMenuItem.Text = "アプリケーション(&A)";
+			this.アプリケーションAToolStripMenuItem.Text = "アプリケーション(&X)";
 			// 
 			// 終了XToolStripMenuItem1
 			// 
@@ -146,7 +146,6 @@
 			// 
 			// MainTimer
 			// 
-			this.MainTimer.Interval = 2000;
 			this.MainTimer.Tick += new System.EventHandler(this.MainTimer_Tick);
 			// 
 			// RectText
