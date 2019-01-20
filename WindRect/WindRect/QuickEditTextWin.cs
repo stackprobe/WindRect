@@ -20,7 +20,10 @@ namespace WindRect
 			this.ParentWin = parentWin;
 
 			if (text != null)
+			{
+				text = text.Replace(Gnd.I.ESC_NEW_LINE, "\r\n");
 				this.MainText.Text = text;
+			}
 		}
 
 		private void QuickEditTextWin_Load(object sender, EventArgs e)
@@ -32,8 +35,8 @@ namespace WindRect
 		{
 			this.Left = this.ParentWin.Left;
 			this.Top = this.ParentWin.Top;
-			this.Width = Math.Max(300, this.ParentWin.Width);
-			this.Height = Math.Max(300, this.ParentWin.Height);
+			this.Width = Math.Max(300, this.ParentWin.Width + 50);
+			this.Height = Math.Max(300, this.ParentWin.Height + 50);
 
 			Tools.PostShown(this);
 		}
@@ -61,7 +64,14 @@ namespace WindRect
 
 		private void QuickEditTextWin_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			this.RetText = this.MainText.Text;
+			string text = this.MainText.Text;
+
+			text = text.Trim();
+
+			text = text.Replace("\r", "");
+			text = text.Replace("\n", Gnd.I.ESC_NEW_LINE);
+
+			this.RetText = text;
 		}
 	}
 }

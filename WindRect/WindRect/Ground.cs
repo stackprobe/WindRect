@@ -27,9 +27,9 @@ namespace WindRect
 			RIGHT,
 		}
 
-		public readonly string ESC_NEW_LINE = "${NEW-LINE}";
-		public readonly string RECT_STARTER = "/RECT/s";
-		public readonly string RECT_ENDER = "/RECT/e";
+		public readonly string ESC_NEW_LINE = "${WIND-RECT-NEW-LINE}";
+		public readonly string RECT_STARTER = "/WIND-RECT/s";
+		public readonly string RECT_ENDER = "/WIND-RECT/e";
 		public readonly string DEF_FONT = "メイリオ";
 
 		// Common {

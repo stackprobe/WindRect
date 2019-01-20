@@ -38,6 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.MainText.Location = new System.Drawing.Point(12, 12);
+			this.MainText.MaxLength = 10000;
 			this.MainText.Multiline = true;
 			this.MainText.Name = "MainText";
 			this.MainText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
