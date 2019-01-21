@@ -363,6 +363,7 @@ namespace WindRect
 					text = text.Trim();
 
 					this.RI.Text = text;
+					Gnd.I.SaveData();
 					Gnd.I.AdjustToTextSize = true;
 					this.UpdateUi();
 				}

@@ -88,7 +88,7 @@ namespace WindRect
 				this.TextText.SelectAll();
 				e.Handled = true;
 			}
-			if (e.KeyChar == (char)10) // Ctrl + Enter
+			else if (e.KeyChar == (char)10) // Ctrl + Enter
 			{
 				e.Handled = true;
 				this.Close();

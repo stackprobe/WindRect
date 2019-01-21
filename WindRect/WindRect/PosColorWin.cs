@@ -218,17 +218,65 @@ namespace WindRect
 
 		private void _テキストサイズBtn_Click(object sender, EventArgs e)
 		{
-			if (this.RI.Text == "")
-			{
-#if false
-				MessageBox.Show("テキストが設定されていません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
-#else
-				this.RI.Text = "Dummy";
-#endif
-			}
 			Gnd.I.AdjustToTextSize = true;
 			this.Close();
+		}
+
+		private void 色Btn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int[] defColors = new int[16];
+
+				for (int index = 0; index < 16; index++)
+					defColors[index] = index * 0x010101;
+
+				using (ColorDialog cd = new ColorDialog())
+				{
+					{
+						int r = int.Parse(this.WinColorR.Text) & 0xff;
+						int g = int.Parse(this.WinColorG.Text) & 0xff;
+						int b = int.Parse(this.WinColorB.Text) & 0xff;
+
+						//はじめに選択されている色を設定
+						cd.Color = Color.FromArgb(r, g, b);
+					}
+
+					//色の作成部分を表示可能にする
+					//デフォルトがTrueのため必要はない
+					//cd.AllowFullOpen = true;
+					//純色だけに制限しない
+					//デフォルトがFalseのため必要はない
+					//cd.SolidColorOnly = false;
+					//[作成した色]に指定した色（RGB値）を表示する
+					cd.CustomColors = defColors;
+
+					//ダイアログを表示する
+					if (cd.ShowDialog() == DialogResult.OK)
+					{
+						//選択された色の取得
+						int r = cd.Color.R;
+						int g = cd.Color.G;
+						int b = cd.Color.B;
+
+						this.WinColorR.Text = "" + r;
+						this.WinColorG.Text = "" + g;
+						this.WinColorB.Text = "" + b;
+					}
+				}
+			}
+			catch
+			{ }
+		}
+
+		private void これをデフォルトにするBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Gnd.I.DefRect = this.RI.GetClone();
+			}
+			catch
+			{ }
 		}
 	}
 }

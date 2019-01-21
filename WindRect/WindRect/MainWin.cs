@@ -70,7 +70,13 @@ namespace WindRect
 
 		private void 追加AToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Gnd.RectInfo ri = new Gnd.RectInfo();
+			Gnd.RectInfo ri;
+
+			if (Gnd.I.DefRect != null)
+				ri = Gnd.I.DefRect.GetClone();
+			else
+				ri = new Gnd.RectInfo();
+
 			Gnd.I.RectInfoList.Add(ri);
 			Gnd.I.SaveData();
 			new RectWin(ri).Show();
@@ -97,11 +103,26 @@ namespace WindRect
 		{
 			this.右クリックを抑止するRToolStripMenuItem.Checked = Gnd.I.RightClickOff;
 			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Checked = Gnd.I.DoubleClickOff;
+			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Checked = Gnd.I.TaskIconDoubleClickAndAddRect;
 
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{
 				ri.Win.UpdateUi_MainWin();
 			}
+		}
+
+		private void TaskIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (Gnd.I.TaskIconDoubleClickAndAddRect == false)
+				return;
+
+			this.追加AToolStripMenuItem_Click(null, null);
+		}
+
+		private void タスクアイコンをダブルクリックで追加AToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Gnd.I.TaskIconDoubleClickAndAddRect = Gnd.I.TaskIconDoubleClickAndAddRect == false;
+			this.UpdateUi();
 		}
 	}
 }

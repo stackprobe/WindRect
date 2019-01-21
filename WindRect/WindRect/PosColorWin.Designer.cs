@@ -50,6 +50,8 @@
 			this._タイリングChk = new System.Windows.Forms.CheckBox();
 			this.EditTextBtn = new System.Windows.Forms.Button();
 			this._テキストサイズBtn = new System.Windows.Forms.Button();
+			this.これをデフォルトにするBtn = new System.Windows.Forms.Button();
+			this.色Btn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -208,86 +210,119 @@
 			// 
 			// ResetBtn
 			// 
+			this.ResetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.ResetBtn.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.ResetBtn.Location = new System.Drawing.Point(265, 408);
+			this.ResetBtn.Location = new System.Drawing.Point(325, 409);
 			this.ResetBtn.Name = "ResetBtn";
 			this.ResetBtn.Size = new System.Drawing.Size(127, 50);
-			this.ResetBtn.TabIndex = 20;
+			this.ResetBtn.TabIndex = 22;
 			this.ResetBtn.Text = "リセット";
 			this.ResetBtn.UseVisualStyleBackColor = true;
 			this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
 			// 
 			// ImageBtn
 			// 
+			this.ImageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ImageBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.ImageBtn.Location = new System.Drawing.Point(12, 315);
+			this.ImageBtn.Location = new System.Drawing.Point(12, 306);
 			this.ImageBtn.Name = "ImageBtn";
-			this.ImageBtn.Size = new System.Drawing.Size(380, 78);
-			this.ImageBtn.TabIndex = 19;
+			this.ImageBtn.Size = new System.Drawing.Size(440, 78);
+			this.ImageBtn.TabIndex = 20;
 			this.ImageBtn.Text = "画像なし";
 			this.ImageBtn.UseVisualStyleBackColor = true;
 			this.ImageBtn.Click += new System.EventHandler(this.ImageBtn_Click);
 			// 
 			// _画像サイズBtn
 			// 
+			this._画像サイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this._画像サイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._画像サイズBtn.Location = new System.Drawing.Point(186, 96);
+			this._画像サイズBtn.Location = new System.Drawing.Point(246, 54);
 			this._画像サイズBtn.Name = "_画像サイズBtn";
 			this._画像サイズBtn.Size = new System.Drawing.Size(206, 78);
-			this._画像サイズBtn.TabIndex = 15;
+			this._画像サイズBtn.TabIndex = 16;
 			this._画像サイズBtn.Text = "画像サイズに合わせる";
 			this._画像サイズBtn.UseVisualStyleBackColor = true;
 			this._画像サイズBtn.Click += new System.EventHandler(this._画像サイズBtn_Click);
 			// 
 			// _画面サイズBtn
 			// 
+			this._画面サイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this._画面サイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._画面サイズBtn.Location = new System.Drawing.Point(186, 54);
+			this._画面サイズBtn.Location = new System.Drawing.Point(246, 12);
 			this._画面サイズBtn.Name = "_画面サイズBtn";
 			this._画面サイズBtn.Size = new System.Drawing.Size(206, 36);
-			this._画面サイズBtn.TabIndex = 14;
+			this._画面サイズBtn.TabIndex = 15;
 			this._画面サイズBtn.Text = "画面サイズに合わせる";
 			this._画面サイズBtn.UseVisualStyleBackColor = true;
 			this._画面サイズBtn.Click += new System.EventHandler(this._画面サイズBtn_Click);
 			// 
 			// _タイリングChk
 			// 
+			this._タイリングChk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this._タイリングChk.AutoSize = true;
 			this._タイリングChk.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._タイリングChk.Location = new System.Drawing.Point(299, 180);
+			this._タイリングChk.Location = new System.Drawing.Point(359, 145);
 			this._タイリングChk.Name = "_タイリングChk";
 			this._タイリングChk.Size = new System.Drawing.Size(93, 24);
-			this._タイリングChk.TabIndex = 16;
+			this._タイリングChk.TabIndex = 17;
 			this._タイリングChk.Text = "タイリング";
 			this._タイリングChk.UseVisualStyleBackColor = true;
 			// 
 			// EditTextBtn
 			// 
+			this.EditTextBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.EditTextBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.EditTextBtn.Location = new System.Drawing.Point(265, 264);
+			this.EditTextBtn.Location = new System.Drawing.Point(246, 264);
 			this.EditTextBtn.Name = "EditTextBtn";
-			this.EditTextBtn.Size = new System.Drawing.Size(127, 36);
-			this.EditTextBtn.TabIndex = 18;
+			this.EditTextBtn.Size = new System.Drawing.Size(206, 36);
+			this.EditTextBtn.TabIndex = 19;
 			this.EditTextBtn.Text = "テキスト";
 			this.EditTextBtn.UseVisualStyleBackColor = true;
 			this.EditTextBtn.Click += new System.EventHandler(this.EditTextBtn_Click);
 			// 
 			// _テキストサイズBtn
 			// 
+			this._テキストサイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this._テキストサイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._テキストサイズBtn.Location = new System.Drawing.Point(186, 222);
+			this._テキストサイズBtn.Location = new System.Drawing.Point(246, 222);
 			this._テキストサイズBtn.Name = "_テキストサイズBtn";
 			this._テキストサイズBtn.Size = new System.Drawing.Size(206, 36);
-			this._テキストサイズBtn.TabIndex = 17;
+			this._テキストサイズBtn.TabIndex = 18;
 			this._テキストサイズBtn.Text = "テキストサイズに合わせる";
 			this._テキストサイズBtn.UseVisualStyleBackColor = true;
 			this._テキストサイズBtn.Click += new System.EventHandler(this._テキストサイズBtn_Click);
+			// 
+			// これをデフォルトにするBtn
+			// 
+			this.これをデフォルトにするBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.これをデフォルトにするBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.これをデフォルトにするBtn.Location = new System.Drawing.Point(12, 429);
+			this.これをデフォルトにするBtn.Name = "これをデフォルトにするBtn";
+			this.これをデフォルトにするBtn.Size = new System.Drawing.Size(200, 30);
+			this.これをデフォルトにするBtn.TabIndex = 21;
+			this.これをデフォルトにするBtn.Text = "この設定をデフォルトにする";
+			this.これをデフォルトにするBtn.UseVisualStyleBackColor = true;
+			this.これをデフォルトにするBtn.Click += new System.EventHandler(this.これをデフォルトにするBtn_Click);
+			// 
+			// 色Btn
+			// 
+			this.色Btn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.色Btn.Location = new System.Drawing.Point(138, 180);
+			this.色Btn.Name = "色Btn";
+			this.色Btn.Size = new System.Drawing.Size(74, 120);
+			this.色Btn.TabIndex = 14;
+			this.色Btn.Text = "色Dlg";
+			this.色Btn.UseVisualStyleBackColor = true;
+			this.色Btn.Click += new System.EventHandler(this.色Btn_Click);
 			// 
 			// PosColorWin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(404, 470);
+			this.ClientSize = new System.Drawing.Size(464, 471);
+			this.Controls.Add(this.色Btn);
+			this.Controls.Add(this.これをデフォルトにするBtn);
 			this.Controls.Add(this._テキストサイズBtn);
 			this.Controls.Add(this.EditTextBtn);
 			this.Controls.Add(this._タイリングChk);
@@ -315,7 +350,7 @@
 			this.MinimizeBox = false;
 			this.Name = "PosColorWin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "位置とサイズと色の変更";
+			this.Text = "位置とサイズと色と画像とテキストの変更";
 			this.TopMost = true;
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PosWin_FormClosed);
 			this.Load += new System.EventHandler(this.PosColorWin_Load);
@@ -348,5 +383,7 @@
 		private System.Windows.Forms.CheckBox _タイリングChk;
 		private System.Windows.Forms.Button EditTextBtn;
 		private System.Windows.Forms.Button _テキストサイズBtn;
+		private System.Windows.Forms.Button これをデフォルトにするBtn;
+		private System.Windows.Forms.Button 色Btn;
 	}
 }

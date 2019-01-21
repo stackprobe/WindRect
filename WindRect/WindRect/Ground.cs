@@ -35,8 +35,11 @@ namespace WindRect
 		// Common {
 		public bool RightClickOff = false;
 		public bool DoubleClickOff = false;
+		public bool TaskIconDoubleClickAndAddRect = false;
 		public bool AutoReupdateUi = false; // 隠し設定
 		// }
+
+		public RectInfo DefRect = null; // null == 無効
 
 		public class RectInfo
 		{
@@ -126,6 +129,7 @@ namespace WindRect
 		public void LoadData()
 		{
 			this.RectInfoList.Clear();
+			this.DefRect = null;
 
 			try
 			{
@@ -135,14 +139,15 @@ namespace WindRect
 				// Common {
 				this.RightClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.DoubleClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+				this.TaskIconDoubleClickAndAddRect = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.AutoReupdateUi = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				// }
 
-				if (lines[i++] != Gnd.I.RECT_STARTER)
-					throw null;
-
 				while (i < lines.Length)
 				{
+					if (lines[i++] != Gnd.I.RECT_STARTER)
+						break;
+
 					RectInfo ri = new RectInfo();
 
 					ri.XPos = Tools.ParseInt(lines[i++], this.RI_MINPOS, this.RI_MAXPOS, 0);
@@ -166,10 +171,14 @@ namespace WindRect
 
 					// RectInfo.*
 
-					if (lines[i++] != Gnd.I.RECT_ENDER)
-						throw null;
-
 					this.RectInfoList.Add(ri);
+				}
+				if (Tools.ParseInt(lines[i++], 0, 1, 0) == 1)
+				{
+					int li = this.RectInfoList.Count - 1;
+
+					this.DefRect = this.RectInfoList[li];
+					this.RectInfoList.RemoveAt(li);
 				}
 			}
 			catch
@@ -189,13 +198,19 @@ namespace WindRect
 				// Common {
 				lines.Add("" + (this.RightClickOff ? 1 : 0));
 				lines.Add("" + (this.DoubleClickOff ? 1 : 0));
+				lines.Add("" + (this.TaskIconDoubleClickAndAddRect ? 1 : 0));
 				lines.Add("" + (this.AutoReupdateUi ? 1 : 0));
 				// }
 
-				lines.Add(Gnd.I.RECT_STARTER);
+				bool dre = this.DefRect != null;
+
+				if (dre)
+					this.RectInfoList.Add(this.DefRect);
 
 				foreach (RectInfo ri in this.RectInfoList)
 				{
+					lines.Add(Gnd.I.RECT_STARTER);
+
 					lines.Add("" + ri.XPos);
 					lines.Add("" + ri.YPos);
 					lines.Add("" + ri.WinW);
@@ -216,9 +231,16 @@ namespace WindRect
 					lines.Add("" + ri.TextColorB);
 
 					// RectInfo.*
-
-					lines.Add(Gnd.I.RECT_ENDER);
 				}
+				lines.Add(Gnd.I.RECT_ENDER);
+
+				if (dre)
+				{
+					lines.Add("" + 1);
+					this.RectInfoList.RemoveAt(this.RectInfoList.Count - 1);
+				}
+				else
+					lines.Add("" + 0);
 
 				File.WriteAllLines(this.DATA_FILE, lines, Encoding.GetEncoding(932));
 			}
