@@ -73,6 +73,8 @@ namespace WindRect
 			return font;
 		}
 
+		// sync > @ PostShown
+
 		public static void PostShown(Form f)
 		{
 			List<Control.ControlCollection> controlTable = new List<Control.ControlCollection>();
@@ -126,5 +128,7 @@ namespace WindRect
 				}
 			}
 		}
+
+		// < sync
 	}
 }
