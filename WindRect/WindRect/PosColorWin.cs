@@ -224,6 +224,12 @@ namespace WindRect
 
 		private void 色Btn_Click(object sender, EventArgs e)
 		{
+			TextBox tbR = this.WinColorR;
+			TextBox tbG = this.WinColorG;
+			TextBox tbB = this.WinColorB;
+
+			// sync > @ _WindRect_SelectColorDlg
+
 			try
 			{
 				int[] defColors = new int[16];
@@ -234,9 +240,9 @@ namespace WindRect
 				using (ColorDialog cd = new ColorDialog())
 				{
 					{
-						int r = int.Parse(this.WinColorR.Text) & 0xff;
-						int g = int.Parse(this.WinColorG.Text) & 0xff;
-						int b = int.Parse(this.WinColorB.Text) & 0xff;
+						int r = int.Parse(tbR.Text) & 0xff;
+						int g = int.Parse(tbG.Text) & 0xff;
+						int b = int.Parse(tbB.Text) & 0xff;
 
 						//はじめに選択されている色を設定
 						cd.Color = Color.FromArgb(r, g, b);
@@ -259,20 +265,23 @@ namespace WindRect
 						int g = cd.Color.G;
 						int b = cd.Color.B;
 
-						this.WinColorR.Text = "" + r;
-						this.WinColorG.Text = "" + g;
-						this.WinColorB.Text = "" + b;
+						tbR.Text = "" + r;
+						tbG.Text = "" + g;
+						tbB.Text = "" + b;
 					}
 				}
 			}
 			catch
 			{ }
+
+			// < sync
 		}
 
 		private void これをデフォルトにするBtn_Click(object sender, EventArgs e)
 		{
 			try
 			{
+				this.SaveData();
 				Gnd.I.DefRect = this.RI.GetClone();
 			}
 			catch

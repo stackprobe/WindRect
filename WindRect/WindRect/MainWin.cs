@@ -77,6 +77,17 @@ namespace WindRect
 			else
 				ri = new Gnd.RectInfo();
 
+		findSamePosLoopRestart:
+			foreach (Gnd.RectInfo otherRi in Gnd.I.RectInfoList)
+			{
+				if (otherRi.XPos == ri.XPos && otherRi.YPos == ri.YPos)
+				{
+					ri.XPos += 5;
+					ri.YPos += 5;
+					goto findSamePosLoopRestart;
+				}
+			}
+
 			Gnd.I.RectInfoList.Add(ri);
 			Gnd.I.SaveData();
 			new RectWin(ri).Show();

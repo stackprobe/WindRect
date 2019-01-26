@@ -43,6 +43,7 @@
 			this.ResetBtn = new System.Windows.Forms.Button();
 			this.FontCombo = new System.Windows.Forms.ComboBox();
 			this.ClearBtn = new System.Windows.Forms.Button();
+			this.色Btn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// TextText
@@ -193,11 +194,23 @@
 			this.ClearBtn.UseVisualStyleBackColor = true;
 			this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
 			// 
+			// 色Btn
+			// 
+			this.色Btn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.色Btn.Location = new System.Drawing.Point(224, 457);
+			this.色Btn.Name = "色Btn";
+			this.色Btn.Size = new System.Drawing.Size(74, 93);
+			this.色Btn.TabIndex = 15;
+			this.色Btn.Text = "色Dlg";
+			this.色Btn.UseVisualStyleBackColor = true;
+			this.色Btn.Click += new System.EventHandler(this.色Btn_Click);
+			// 
 			// EditTextWin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(584, 562);
+			this.Controls.Add(this.色Btn);
 			this.Controls.Add(this.ClearBtn);
 			this.Controls.Add(this.FontCombo);
 			this.Controls.Add(this.ResetBtn);
@@ -244,5 +257,6 @@
 		private System.Windows.Forms.Button ResetBtn;
 		private System.Windows.Forms.ComboBox FontCombo;
 		private System.Windows.Forms.Button ClearBtn;
+		private System.Windows.Forms.Button 色Btn;
 	}
 }
