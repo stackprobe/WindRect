@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using System.Threading;
 using System.IO;
-using System.Security.Cryptography;
 using System.Text;
-using Charlotte;
+using System.Threading;
+using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace WindRect
 {
