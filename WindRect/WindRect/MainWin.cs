@@ -135,5 +135,59 @@ namespace WindRect
 			Gnd.I.TaskIconDoubleClickAndAddRect = Gnd.I.TaskIconDoubleClickAndAddRect == false;
 			this.UpdateUi();
 		}
+
+		private void 全部整列SToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int xy = 0;
+				int xyStep = 整列幅();
+
+				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				{
+					ri.Win.Left = xy;
+					ri.Win.Top = xy;
+
+					xy += xyStep;
+				}
+				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+					ri.Win.TopMost = false;
+
+				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				{
+					ri.Win.TopMost = true;
+					ri.Win.TopMost = false;
+				}
+				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+					ri.Win.TopMost = ri.MostTop;
+
+				Gnd.I.SaveData();
+			}
+			catch
+			{ }
+		}
+
+		private int 整列幅()
+		{
+			int wh = Math.Min(
+				Screen.AllScreens[0].Bounds.Width,
+				Screen.AllScreens[0].Bounds.Height
+				);
+			wh *= 2;
+			wh /= 3;
+			wh /= (Gnd.I.RectInfoList.Count + 1);
+			wh = Math.Max(1, wh);
+			return wh;
+		}
+
+		private void 全部剥がすCToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Gnd.RectInfo[] ris = Gnd.I.RectInfoList.ToArray(); // RectInfoListが変更されるので退避
+
+			foreach (Gnd.RectInfo ri in ris)
+			{
+				ri.Win.剥がす();
+			}
+		}
 	}
 }

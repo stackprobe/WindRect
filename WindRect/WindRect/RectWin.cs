@@ -174,6 +174,11 @@ namespace WindRect
 			Gnd.I.SaveData();
 		}
 
+		public void 剥がす()
+		{
+			this.閉じるCToolStripMenuItem_Click(null, null);
+		}
+
 		private void 閉じるCToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (this.MT_Enabled)
