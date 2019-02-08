@@ -28,8 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuickEditTextWin));
 			this.MainText = new System.Windows.Forms.TextBox();
+			this.MainTextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.日付を挿入CtrlDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.日時を挿入CtrlTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.MainTextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// MainText
@@ -37,6 +42,7 @@
 			this.MainText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.MainText.ContextMenuStrip = this.MainTextMenu;
 			this.MainText.Location = new System.Drawing.Point(12, 12);
 			this.MainText.MaxLength = 10000;
 			this.MainText.Multiline = true;
@@ -46,6 +52,28 @@
 			this.MainText.TabIndex = 0;
 			this.MainText.TextChanged += new System.EventHandler(this.MainText_TextChanged);
 			this.MainText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainText_KeyPress);
+			// 
+			// MainTextMenu
+			// 
+			this.MainTextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.日付を挿入CtrlDToolStripMenuItem,
+            this.日時を挿入CtrlTToolStripMenuItem});
+			this.MainTextMenu.Name = "MainTextMenu";
+			this.MainTextMenu.Size = new System.Drawing.Size(174, 70);
+			// 
+			// 日付を挿入CtrlDToolStripMenuItem
+			// 
+			this.日付を挿入CtrlDToolStripMenuItem.Name = "日付を挿入CtrlDToolStripMenuItem";
+			this.日付を挿入CtrlDToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.日付を挿入CtrlDToolStripMenuItem.Text = "日付を挿入(Ctrl+D)";
+			this.日付を挿入CtrlDToolStripMenuItem.Click += new System.EventHandler(this.日付を挿入CtrlDToolStripMenuItem_Click);
+			// 
+			// 日時を挿入CtrlTToolStripMenuItem
+			// 
+			this.日時を挿入CtrlTToolStripMenuItem.Name = "日時を挿入CtrlTToolStripMenuItem";
+			this.日時を挿入CtrlTToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.日時を挿入CtrlTToolStripMenuItem.Text = "日時を挿入(Ctrl+T)";
+			this.日時を挿入CtrlTToolStripMenuItem.Click += new System.EventHandler(this.日時を挿入CtrlTToolStripMenuItem_Click);
 			// 
 			// QuickEditTextWin
 			// 
@@ -67,6 +95,7 @@
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QuickEditTextWin_FormClosed);
 			this.Load += new System.EventHandler(this.QuickEditTextWin_Load);
 			this.Shown += new System.EventHandler(this.QuickEditTextWin_Shown);
+			this.MainTextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -75,5 +104,8 @@
 		#endregion
 
 		private System.Windows.Forms.TextBox MainText;
+		private System.Windows.Forms.ContextMenuStrip MainTextMenu;
+		private System.Windows.Forms.ToolStripMenuItem 日付を挿入CtrlDToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 日時を挿入CtrlTToolStripMenuItem;
 	}
 }

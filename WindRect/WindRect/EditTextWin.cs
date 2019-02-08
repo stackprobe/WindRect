@@ -19,6 +19,8 @@ namespace WindRect
 			this.RI = ri;
 
 			InitializeComponent();
+
+			this.MinimumSize = this.Size;
 		}
 
 		private void EditTextWin_Load(object sender, EventArgs e)

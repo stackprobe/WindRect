@@ -53,6 +53,16 @@ namespace WindRect
 				this.MainText.SelectAll();
 				e.Handled = true;
 			}
+			else if (e.KeyChar == (char)4) // ctrl_d
+			{
+				this.日付を挿入CtrlDToolStripMenuItem_Click(null, null);
+				e.Handled = true;
+			}
+			else if (e.KeyChar == (char)20) // ctrl_t
+			{
+				this.日時を挿入CtrlTToolStripMenuItem_Click(null, null);
+				e.Handled = true;
+			}
 			else if (e.KeyChar == (char)10) // ctrl_enter
 			{
 				this.Close();
@@ -72,6 +82,21 @@ namespace WindRect
 			text = text.Replace("\n", Gnd.I.ESC_NEW_LINE);
 
 			this.RetText = text;
+		}
+
+		private void 日付を挿入CtrlDToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.InsertToMainText(DateTime.Now.ToString("yyyy/MM/dd"));
+		}
+
+		private void 日時を挿入CtrlTToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.InsertToMainText(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"));
+		}
+
+		private void InsertToMainText(string str)
+		{
+			this.MainText.SelectedText = str + "\r\n";
 		}
 	}
 }
