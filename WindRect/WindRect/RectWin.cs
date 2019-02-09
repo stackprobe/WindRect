@@ -107,7 +107,8 @@ namespace WindRect
 
 				string text = this.RI.Text;
 
-				text = text.Replace(Gnd.I.ESC_NEW_LINE, "\r\n");
+				text = Utils2.Unescape(text);
+				text = text.Replace("\n", "\r\n");
 
 				this.RectText.Text = text;
 				this.RectText.Font = new Font(this.RI.TextFont, this.RI.TextSize, FontStyle.Regular);

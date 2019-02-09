@@ -21,7 +21,8 @@ namespace WindRect
 
 			if (text != null)
 			{
-				text = text.Replace(Gnd.I.ESC_NEW_LINE, "\r\n");
+				text = Utils2.Unescape(text);
+				text = text.Replace("\n", "\r\n");
 				this.MainText.Text = text;
 			}
 		}
@@ -77,9 +78,8 @@ namespace WindRect
 			string text = this.MainText.Text;
 
 			text = text.Trim();
-
 			text = text.Replace("\r", "");
-			text = text.Replace("\n", Gnd.I.ESC_NEW_LINE);
+			text = Utils2.Escape(text);
 
 			this.RetText = text;
 		}

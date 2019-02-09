@@ -37,7 +37,8 @@ namespace WindRect
 		{
 			string text = this.RI.Text;
 
-			text = text.Replace(Gnd.I.ESC_NEW_LINE, "\r\n");
+			text = Utils2.Unescape(text);
+			text = text.Replace("\n", "\r\n");
 
 			this.TextText.Text = text;
 			this.FontCombo.Text = this.RI.TextFont;
@@ -54,7 +55,7 @@ namespace WindRect
 
 				text = text.Trim();
 				text = text.Replace("\r", "");
-				text = text.Replace("\n", Gnd.I.ESC_NEW_LINE);
+				text = Utils2.Escape(text);
 
 				this.RI.Text = text;
 			}

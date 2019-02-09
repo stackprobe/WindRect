@@ -86,6 +86,7 @@
       <DependentUpon>RectWin.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
+    <Compile Include="Utils2.cs" />
     <EmbeddedResource Include="EditTextWin.resx">
       <DependentUpon>EditTextWin.cs</DependentUpon>
     </EmbeddedResource>
