@@ -248,7 +248,7 @@
 			// 
 			this.ResetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.ResetBtn.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.ResetBtn.Location = new System.Drawing.Point(453, 503);
+			this.ResetBtn.Location = new System.Drawing.Point(453, 453);
 			this.ResetBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.ResetBtn.Name = "ResetBtn";
 			this.ResetBtn.Size = new System.Drawing.Size(169, 54);
@@ -276,7 +276,7 @@
 			this._画像サイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this._画像サイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._画像サイズBtn.Location = new System.Drawing.Point(7, 250);
+			this._画像サイズBtn.Location = new System.Drawing.Point(7, 213);
 			this._画像サイズBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this._画像サイズBtn.Name = "_画像サイズBtn";
 			this._画像サイズBtn.Size = new System.Drawing.Size(284, 27);
@@ -290,7 +290,7 @@
 			this._画面サイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this._画面サイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._画面サイズBtn.Location = new System.Drawing.Point(7, 213);
+			this._画面サイズBtn.Location = new System.Drawing.Point(7, 176);
 			this._画面サイズBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this._画面サイズBtn.Name = "_画面サイズBtn";
 			this._画面サイズBtn.Size = new System.Drawing.Size(284, 27);
@@ -331,7 +331,7 @@
 			this._テキストサイズBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this._テキストサイズBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this._テキストサイズBtn.Location = new System.Drawing.Point(7, 287);
+			this._テキストサイズBtn.Location = new System.Drawing.Point(7, 250);
 			this._テキストサイズBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this._テキストサイズBtn.Name = "_テキストサイズBtn";
 			this._テキストサイズBtn.Size = new System.Drawing.Size(284, 27);
@@ -345,7 +345,7 @@
 			this.これをデフォルトにするBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.これをデフォルトにするBtn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.これをデフォルトにするBtn.Location = new System.Drawing.Point(12, 530);
+			this.これをデフォルトにするBtn.Location = new System.Drawing.Point(12, 480);
 			this.これをデフォルトにするBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.これをデフォルトにするBtn.Name = "これをデフォルトにするBtn";
 			this.これをデフォルトにするBtn.Size = new System.Drawing.Size(298, 27);
@@ -359,7 +359,7 @@
 			this.色Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.色Btn.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.色Btn.Location = new System.Drawing.Point(7, 176);
+			this.色Btn.Location = new System.Drawing.Point(7, 139);
 			this.色Btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.色Btn.Name = "色Btn";
 			this.色Btn.Size = new System.Drawing.Size(136, 27);
@@ -385,7 +385,7 @@
 			this.groupBox1.Controls.Add(this.WinH);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(298, 350);
+			this.groupBox1.Size = new System.Drawing.Size(298, 300);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "位置とサイズ";
@@ -402,7 +402,7 @@
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Location = new System.Drawing.Point(316, 12);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(150, 250);
+			this.groupBox2.Size = new System.Drawing.Size(150, 203);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "色";
@@ -413,7 +413,7 @@
 			this.groupBox3.Controls.Add(this.EditTextBtn);
 			this.groupBox3.Location = new System.Drawing.Point(472, 12);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(150, 80);
+			this.groupBox3.Size = new System.Drawing.Size(150, 92);
 			this.groupBox3.TabIndex = 2;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "テキスト";
@@ -425,7 +425,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox4.Controls.Add(this.ImageBtn);
 			this.groupBox4.Controls.Add(this._タイリングChk);
-			this.groupBox4.Location = new System.Drawing.Point(12, 368);
+			this.groupBox4.Location = new System.Drawing.Point(12, 318);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(610, 127);
 			this.groupBox4.TabIndex = 3;
@@ -436,7 +436,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(634, 571);
+			this.ClientSize = new System.Drawing.Size(634, 521);
 			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
@@ -450,7 +450,7 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "PosColorWin";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "位置とサイズと色と画像とテキストの変更";
 			this.TopMost = true;
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PosWin_FormClosed);

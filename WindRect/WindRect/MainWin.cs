@@ -171,6 +171,9 @@ namespace WindRect
 					ri.Win.Left = xy;
 					ri.Win.Top = xy;
 
+					ri.XPos = xy;
+					ri.YPos = xy;
+
 					xy += xyStep;
 				}
 				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)

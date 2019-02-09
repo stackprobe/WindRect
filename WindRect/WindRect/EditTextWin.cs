@@ -149,7 +149,7 @@ namespace WindRect
 				int[] defColors = new int[16];
 
 				for (int index = 0; index < 16; index++)
-					defColors[index] = index * 0x010101;
+					defColors[index] = index * 0x081008 + 0x800000;
 
 				using (ColorDialog cd = new ColorDialog())
 				{
