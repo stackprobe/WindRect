@@ -40,11 +40,13 @@
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.その他OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.全部整列SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.全部整列Item = new System.Windows.Forms.ToolStripMenuItem();
 			this.全部剥がすCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.全部剥がすItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
 			this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.全部整列Item = new System.Windows.Forms.ToolStripMenuItem();
-			this.全部剥がすItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+			this.その他の設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.TaskMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -79,7 +81,9 @@
             this.右クリックを抑止するRToolStripMenuItem,
             this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.タスクアイコンをダブルクリックで追加AToolStripMenuItem});
+            this.タスクアイコンをダブルクリックで追加AToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.その他の設定SToolStripMenuItem});
 			this.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem";
 			this.設定SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.設定SToolStripMenuItem.Text = "設定(&S)";
@@ -128,6 +132,13 @@
 			this.全部整列SToolStripMenuItem.Text = "全部整列(&S)";
 			this.全部整列SToolStripMenuItem.Click += new System.EventHandler(this.全部整列SToolStripMenuItem_Click);
 			// 
+			// 全部整列Item
+			// 
+			this.全部整列Item.Name = "全部整列Item";
+			this.全部整列Item.Size = new System.Drawing.Size(152, 22);
+			this.全部整列Item.Text = "全部整列(&S)";
+			this.全部整列Item.Click += new System.EventHandler(this.全部整列Item_Click);
+			// 
 			// 全部剥がすCToolStripMenuItem
 			// 
 			this.全部剥がすCToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -136,6 +147,13 @@
 			this.全部剥がすCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.全部剥がすCToolStripMenuItem.Text = "全部剥がす(&C)";
 			this.全部剥がすCToolStripMenuItem.Click += new System.EventHandler(this.全部剥がすCToolStripMenuItem_Click);
+			// 
+			// 全部剥がすItem
+			// 
+			this.全部剥がすItem.Name = "全部剥がすItem";
+			this.全部剥がすItem.Size = new System.Drawing.Size(152, 22);
+			this.全部剥がすItem.Text = "全部剥がす(&C)";
+			this.全部剥がすItem.Click += new System.EventHandler(this.全部剥がすItem_Click);
 			// 
 			// toolStripMenuItem2
 			// 
@@ -149,19 +167,17 @@
 			this.終了XToolStripMenuItem.Text = "終了(&X)";
 			this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
 			// 
-			// 全部整列Item
+			// toolStripMenuItem3
 			// 
-			this.全部整列Item.Name = "全部整列Item";
-			this.全部整列Item.Size = new System.Drawing.Size(152, 22);
-			this.全部整列Item.Text = "全部整列(&S)";
-			this.全部整列Item.Click += new System.EventHandler(this.全部整列Item_Click);
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(287, 6);
 			// 
-			// 全部剥がすItem
+			// その他の設定SToolStripMenuItem
 			// 
-			this.全部剥がすItem.Name = "全部剥がすItem";
-			this.全部剥がすItem.Size = new System.Drawing.Size(152, 22);
-			this.全部剥がすItem.Text = "全部剥がす(&C)";
-			this.全部剥がすItem.Click += new System.EventHandler(this.全部剥がすItem_Click);
+			this.その他の設定SToolStripMenuItem.Name = "その他の設定SToolStripMenuItem";
+			this.その他の設定SToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+			this.その他の設定SToolStripMenuItem.Text = "その他の設定(&S)";
+			this.その他の設定SToolStripMenuItem.Click += new System.EventHandler(this.その他の設定SToolStripMenuItem_Click);
 			// 
 			// MainWin
 			// 
@@ -201,6 +217,8 @@
 		private System.Windows.Forms.ToolStripMenuItem 全部剥がすCToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 全部整列Item;
 		private System.Windows.Forms.ToolStripMenuItem 全部剥がすItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem その他の設定SToolStripMenuItem;
 	}
 }
 

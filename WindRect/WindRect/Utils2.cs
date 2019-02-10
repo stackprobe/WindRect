@@ -17,10 +17,10 @@ namespace WindRect
 
 			foreach (char chr in str)
 			{
-				if (chr <= ' ' || chr == '$' || chr == 0x007f)
+				if (chr <= 0x1f || chr == '$' || (0x7f <= chr && chr <= 0xff))
 				{
 					buff.Append('$');
-					buff.Append(((int)chr).ToString("x4"));
+					buff.Append(((int)chr).ToString("x2"));
 				}
 				else
 					buff.Append(chr);
@@ -36,8 +36,8 @@ namespace WindRect
 			{
 				if (str[index] == '$')
 				{
-					buff.Append((char)Convert.ToInt32(str.Substring(index + 1, 4), 16));
-					index += 4;
+					buff.Append((char)Convert.ToInt32(str.Substring(index + 1, 2), 16));
+					index += 2;
 				}
 				else
 					buff.Append(str[index]);

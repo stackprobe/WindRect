@@ -54,17 +54,11 @@ namespace WindRect
 			this.ActivatedFlag = true;
 			this.UpdateUi();
 			this.UpdateUi_MainWin();
-
-			this.MT_Enabled = true;
-			this.MainTimer.Interval = 20;
-			this.MainTimer.Enabled = true;
 		}
 
 		private void RectWin_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			this.MT_Enabled = false;
-			this.MainTimer.Interval = 100; // 2bs
-			this.MainTimer.Enabled = false;
+			// noop
 		}
 
 		private void UpdateUi()
@@ -145,9 +139,6 @@ namespace WindRect
 
 		private void 位置と色PToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (this.MT_Enabled)
-				return;
-
 			using (Form f = new PosColorWin(this.RI))
 			{
 				f.ShowDialog(this);
@@ -157,9 +148,6 @@ namespace WindRect
 
 		private void 常に手前に表示TToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (this.MT_Enabled)
-				return;
-
 			this.RI.MostTop = this.RI.MostTop == false;
 			this.UpdateUi();
 			Gnd.I.SaveData();
@@ -167,9 +155,6 @@ namespace WindRect
 
 		private void ドラッグで移動MToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (this.MT_Enabled)
-				return;
-
 			this.RI.MovableFlag = this.RI.MovableFlag == false;
 			this.UpdateUi();
 			Gnd.I.SaveData();
@@ -182,9 +167,6 @@ namespace WindRect
 
 		private void 閉じるCToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (this.MT_Enabled)
-				return;
-
 			Gnd.I.Remove(this.RI);
 			Gnd.I.SaveData();
 			this.Close();
@@ -200,9 +182,6 @@ namespace WindRect
 
 			try
 			{
-				if (this.MT_Enabled)
-					return;
-
 				if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
 				{
 					this.WinMoveDiff = new Point(e.X, e.Y);
@@ -220,9 +199,6 @@ namespace WindRect
 
 			try
 			{
-				if (this.MT_Enabled)
-					return;
-
 				if ((e.Button & MouseButtons.Left) == MouseButtons.Left && this.WMD_Enabled)
 				{
 					this.Location = new Point(
@@ -245,9 +221,6 @@ namespace WindRect
 
 			try
 			{
-				if (this.MT_Enabled)
-					return;
-
 				if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
 				{
 					this.WMD_Enabled = false;
@@ -271,47 +244,6 @@ namespace WindRect
 		private void RectText_MouseUp(object sender, MouseEventArgs e)
 		{
 			this.RectWin_MouseUp(null, e);
-		}
-
-		private bool MT_Enabled;
-		private bool MT_Busy;
-		private long MT_Count;
-
-		private void MainTimer_Tick(object sender, EventArgs e)
-		{
-			if (this.MT_Enabled == false || this.MT_Busy)
-				return;
-
-			this.MT_Busy = true;
-
-			try
-			{
-				switch (this.MT_Count)
-				{
-					case 2:
-						this.TopMost = false; // 2bs 一旦リセット
-						break;
-
-					case 3:
-						this.UpdateUi(); // 2bs 再設定
-						break;
-
-					case 4:
-						this.UpdateUi_MainWin(); // 2bs 再設定
-						break;
-
-					case 5:
-						this.MT_Enabled = false;
-						this.MainTimer.Interval = 100; // 2bs
-						this.MainTimer.Enabled = false;
-						break;
-				}
-			}
-			finally
-			{
-				this.MT_Busy = false;
-				this.MT_Count++;
-			}
 		}
 
 		private void 終了XToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -352,9 +284,6 @@ namespace WindRect
 
 		private void RectWin_DoubleClick(object sender, EventArgs e)
 		{
-			if (this.MT_Enabled)
-				return;
-
 			if (Gnd.I.DoubleClickOff)
 				return;
 

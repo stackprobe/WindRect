@@ -51,15 +51,20 @@ namespace WindRect
 			this.Visible = false;
 			Gnd.I.LoadData();
 
-			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+			this.BeginInvoke((MethodInvoker)delegate
 			{
-				new RectWin(ri).Show();
-			}
-			this.TaskIcon.Visible = true;
+				Thread.Sleep(Gnd.I.BootDelaySecond * 1000);
 
-			Gnd.I.MainWin = this;
+				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				{
+					new RectWin(ri).Show();
+				}
+				this.TaskIcon.Visible = true;
 
-			this.UpdateUi();
+				Gnd.I.MainWin = this;
+
+				this.UpdateUi();
+			});
 		}
 
 		private void MainWin_FormClosed(object sender, FormClosedEventArgs e)
@@ -201,6 +206,27 @@ namespace WindRect
 			{
 				ri.Win.剥がす();
 			}
+		}
+
+		private void その他の設定SToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.BeforeShowDlg();
+
+			using (その他の設定Dlg f = new その他の設定Dlg())
+			{
+				f.ShowDialog();
+			}
+			this.AfterShowDlg();
+		}
+
+		private void BeforeShowDlg()
+		{
+			this.TaskIcon.Visible = false;
+		}
+
+		private void AfterShowDlg()
+		{
+			this.TaskIcon.Visible = true;
 		}
 	}
 }

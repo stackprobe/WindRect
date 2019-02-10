@@ -31,11 +31,15 @@ namespace WindRect
 		public readonly string RECT_ENDER = "/WIND-RECT/e";
 		public readonly string DEF_FONT = "メイリオ";
 
-		// Common {
+		// CommonSetting {
+
 		public bool RightClickOff = false;
 		public bool DoubleClickOff = false;
 		public bool TaskIconDoubleClickAndAddRect = false;
 		public bool AutoReupdateUi = false; // 隠し設定
+
+		public int BootDelaySecond = 0;
+
 		// }
 
 		public RectInfo DefRect = null; // null == 無効
@@ -135,11 +139,15 @@ namespace WindRect
 				string[] lines = File.ReadAllLines(this.DATA_FILE, Encoding.GetEncoding(932));
 				int i = 0;
 
-				// Common {
+				// CommonSetting {
+
 				this.RightClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.DoubleClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.TaskIconDoubleClickAndAddRect = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.AutoReupdateUi = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+
+				this.BootDelaySecond = Tools.ParseInt(lines[i++], 0, 600, 0);
+
 				// }
 
 				while (i < lines.Length)
@@ -194,11 +202,15 @@ namespace WindRect
 
 				List<string> lines = new List<string>();
 
-				// Common {
+				// CommonSetting {
+
 				lines.Add("" + (this.RightClickOff ? 1 : 0));
 				lines.Add("" + (this.DoubleClickOff ? 1 : 0));
 				lines.Add("" + (this.TaskIconDoubleClickAndAddRect ? 1 : 0));
 				lines.Add("" + (this.AutoReupdateUi ? 1 : 0));
+
+				lines.Add("" + this.BootDelaySecond);
+
 				// }
 
 				bool dre = this.DefRect != null;

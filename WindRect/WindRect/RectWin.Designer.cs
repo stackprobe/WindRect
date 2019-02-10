@@ -43,7 +43,6 @@
 			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
 			this.アプリケーションAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.終了XToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.MainTimer = new System.Windows.Forms.Timer(this.components);
 			this.RectText = new System.Windows.Forms.Label();
 			this.RClickMenu.SuspendLayout();
 			this.SuspendLayout();
@@ -144,10 +143,6 @@
 			this.終了XToolStripMenuItem1.Text = "終了(&X)";
 			this.終了XToolStripMenuItem1.Click += new System.EventHandler(this.終了XToolStripMenuItem1_Click);
 			// 
-			// MainTimer
-			// 
-			this.MainTimer.Tick += new System.EventHandler(this.MainTimer_Tick);
-			// 
 			// RectText
 			// 
 			this.RectText.AutoSize = true;
@@ -197,7 +192,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ドラッグで移動MToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem 終了XToolStripMenuItem;
-		private System.Windows.Forms.Timer MainTimer;
 		private System.Windows.Forms.ToolStripMenuItem アプリケーションAToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 終了XToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem 剥がすCToolStripMenuItem;
