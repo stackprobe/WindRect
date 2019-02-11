@@ -34,10 +34,13 @@
 			this.TaskMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.右クリックを抑止するRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.右クリックでメニューを表示するRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+			this.その他の設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.その他OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.全部整列SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.全部整列Item = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +48,6 @@
 			this.全部剥がすItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
 			this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-			this.その他の設定SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.TaskMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,6 +56,7 @@
 			this.TaskIcon.ContextMenuStrip = this.TaskMenu;
 			this.TaskIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TaskIcon.Icon")));
 			this.TaskIcon.Text = "WindRect";
+			this.TaskIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TaskIcon_MouseClick);
 			this.TaskIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TaskIcon_MouseDoubleClick);
 			// 
 			// TaskMenu
@@ -78,41 +80,61 @@
 			// 設定SToolStripMenuItem
 			// 
 			this.設定SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.右クリックを抑止するRToolStripMenuItem,
+            this.右クリックでメニューを表示するRToolStripMenuItem,
             this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem,
             this.toolStripMenuItem1,
             this.タスクアイコンをダブルクリックで追加AToolStripMenuItem,
+            this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem,
             this.toolStripMenuItem3,
             this.その他の設定SToolStripMenuItem});
 			this.設定SToolStripMenuItem.Name = "設定SToolStripMenuItem";
 			this.設定SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.設定SToolStripMenuItem.Text = "設定(&S)";
 			// 
-			// 右クリックを抑止するRToolStripMenuItem
+			// 右クリックでメニューを表示するRToolStripMenuItem
 			// 
-			this.右クリックを抑止するRToolStripMenuItem.Name = "右クリックを抑止するRToolStripMenuItem";
-			this.右クリックを抑止するRToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-			this.右クリックを抑止するRToolStripMenuItem.Text = "右クリックメニューを抑止する(&R)";
-			this.右クリックを抑止するRToolStripMenuItem.Click += new System.EventHandler(this.右クリックを抑止するRToolStripMenuItem_Click);
+			this.右クリックでメニューを表示するRToolStripMenuItem.Name = "右クリックでメニューを表示するRToolStripMenuItem";
+			this.右クリックでメニューを表示するRToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+			this.右クリックでメニューを表示するRToolStripMenuItem.Text = "右クリックでメニューを表示する(&R)";
+			this.右クリックでメニューを表示するRToolStripMenuItem.Click += new System.EventHandler(this.右クリックでメニューを表示するRToolStripMenuItem_Click);
 			// 
 			// ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem
 			// 
 			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Name = "ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem";
-			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Text = "ダブルクリックによるテキスト編集を抑止する(&D)";
-			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Click += new System.EventHandler(this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem_Click);
+			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Text = "ダブルクリックでテキストを編集する(&D)";
+			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Click += new System.EventHandler(this.ダブルクリックでテキストを編集するDToolStripMenuItem_Click);
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(287, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(277, 6);
 			// 
 			// タスクアイコンをダブルクリックで追加AToolStripMenuItem
 			// 
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Name = "タスクアイコンをダブルクリックで追加AToolStripMenuItem";
-			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Text = "タスクアイコンをダブルクリックで追加(&A)";
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Click += new System.EventHandler(this.タスクアイコンをダブルクリックで追加AToolStripMenuItem_Click);
+			// 
+			// タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem
+			// 
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem.Name = "タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem";
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem.Text = "タスクアイコンをクリックで前面に表示する(&Z)";
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem.Click += new System.EventHandler(this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem3
+			// 
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Size = new System.Drawing.Size(277, 6);
+			// 
+			// その他の設定SToolStripMenuItem
+			// 
+			this.その他の設定SToolStripMenuItem.Name = "その他の設定SToolStripMenuItem";
+			this.その他の設定SToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+			this.その他の設定SToolStripMenuItem.Text = "その他の設定(&S)";
+			this.その他の設定SToolStripMenuItem.Click += new System.EventHandler(this.その他の設定SToolStripMenuItem_Click);
 			// 
 			// その他OToolStripMenuItem
 			// 
@@ -128,14 +150,14 @@
 			this.全部整列SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.全部整列Item});
 			this.全部整列SToolStripMenuItem.Name = "全部整列SToolStripMenuItem";
-			this.全部整列SToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.全部整列SToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
 			this.全部整列SToolStripMenuItem.Text = "全部整列(&S)";
 			this.全部整列SToolStripMenuItem.Click += new System.EventHandler(this.全部整列SToolStripMenuItem_Click);
 			// 
 			// 全部整列Item
 			// 
 			this.全部整列Item.Name = "全部整列Item";
-			this.全部整列Item.Size = new System.Drawing.Size(152, 22);
+			this.全部整列Item.Size = new System.Drawing.Size(136, 22);
 			this.全部整列Item.Text = "全部整列(&S)";
 			this.全部整列Item.Click += new System.EventHandler(this.全部整列Item_Click);
 			// 
@@ -144,14 +166,14 @@
 			this.全部剥がすCToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.全部剥がすItem});
 			this.全部剥がすCToolStripMenuItem.Name = "全部剥がすCToolStripMenuItem";
-			this.全部剥がすCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.全部剥がすCToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
 			this.全部剥がすCToolStripMenuItem.Text = "全部剥がす(&C)";
 			this.全部剥がすCToolStripMenuItem.Click += new System.EventHandler(this.全部剥がすCToolStripMenuItem_Click);
 			// 
 			// 全部剥がすItem
 			// 
 			this.全部剥がすItem.Name = "全部剥がすItem";
-			this.全部剥がすItem.Size = new System.Drawing.Size(152, 22);
+			this.全部剥がすItem.Size = new System.Drawing.Size(145, 22);
 			this.全部剥がすItem.Text = "全部剥がす(&C)";
 			this.全部剥がすItem.Click += new System.EventHandler(this.全部剥がすItem_Click);
 			// 
@@ -166,18 +188,6 @@
 			this.終了XToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.終了XToolStripMenuItem.Text = "終了(&X)";
 			this.終了XToolStripMenuItem.Click += new System.EventHandler(this.終了XToolStripMenuItem_Click);
-			// 
-			// toolStripMenuItem3
-			// 
-			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-			this.toolStripMenuItem3.Size = new System.Drawing.Size(287, 6);
-			// 
-			// その他の設定SToolStripMenuItem
-			// 
-			this.その他の設定SToolStripMenuItem.Name = "その他の設定SToolStripMenuItem";
-			this.その他の設定SToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-			this.その他の設定SToolStripMenuItem.Text = "その他の設定(&S)";
-			this.その他の設定SToolStripMenuItem.Click += new System.EventHandler(this.その他の設定SToolStripMenuItem_Click);
 			// 
 			// MainWin
 			// 
@@ -208,7 +218,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem 追加AToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 設定SToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem 右クリックを抑止するRToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 右クリックでメニューを表示するRToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem タスクアイコンをダブルクリックで追加AToolStripMenuItem;
@@ -219,6 +229,7 @@
 		private System.Windows.Forms.ToolStripMenuItem 全部剥がすItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
 		private System.Windows.Forms.ToolStripMenuItem その他の設定SToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem;
 	}
 }
 

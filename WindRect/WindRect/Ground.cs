@@ -38,7 +38,12 @@ namespace WindRect
 		public bool TaskIconDoubleClickAndAddRect = false;
 		public bool AutoReupdateUi = false; // 隠し設定
 
+		// }
+
+		// CommonSetting_2 {
+
 		public int BootDelaySecond = 0;
+		public bool TaskIconClickAndShowAllRectOff = false;
 
 		// }
 
@@ -146,8 +151,6 @@ namespace WindRect
 				this.TaskIconDoubleClickAndAddRect = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.AutoReupdateUi = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 
-				this.BootDelaySecond = Tools.ParseInt(lines[i++], 0, 600, 0);
-
 				// }
 
 				while (i < lines.Length)
@@ -187,6 +190,13 @@ namespace WindRect
 					this.DefRect = this.RectInfoList[li];
 					this.RectInfoList.RemoveAt(li);
 				}
+
+				// CommonSetting_2 {
+
+				this.BootDelaySecond = Tools.ParseInt(lines[i++], 0, 600, 0);
+				this.TaskIconClickAndShowAllRectOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+
+				// }
 			}
 			catch
 			{
@@ -208,8 +218,6 @@ namespace WindRect
 				lines.Add("" + (this.DoubleClickOff ? 1 : 0));
 				lines.Add("" + (this.TaskIconDoubleClickAndAddRect ? 1 : 0));
 				lines.Add("" + (this.AutoReupdateUi ? 1 : 0));
-
-				lines.Add("" + this.BootDelaySecond);
 
 				// }
 
@@ -252,6 +260,13 @@ namespace WindRect
 				}
 				else
 					lines.Add("" + 0);
+
+				// CommonSetting_2 {
+
+				lines.Add("" + this.BootDelaySecond);
+				lines.Add("" + (this.TaskIconClickAndShowAllRectOff ? 1 : 0));
+
+				// }
 
 				File.WriteAllLines(this.DATA_FILE, lines, Encoding.GetEncoding(932));
 			}

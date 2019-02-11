@@ -30,8 +30,8 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(その他の設定Dlg));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.CBBootDelaySecond = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.CBBootDelaySecond = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -43,10 +43,21 @@
 			this.groupBox1.Controls.Add(this.CBBootDelaySecond);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(520, 150);
+			this.groupBox1.Size = new System.Drawing.Size(570, 140);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "遅延起動";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("メイリオ", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label1.Location = new System.Drawing.Point(6, 57);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(514, 51);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "(Windows7で)WindRectをスタートアップに登録するなどしてログオン時に起動したとき、\r\nウィンドウが正しい位置に表示されなかったり、『常に手前に表示" +
+    "』が適用されないことがあります。\r\nその場合、これを有効にすると解消するかもしれません。";
 			// 
 			// CBBootDelaySecond
 			// 
@@ -62,24 +73,14 @@
             "有効(3分)"});
 			this.CBBootDelaySecond.Location = new System.Drawing.Point(6, 26);
 			this.CBBootDelaySecond.Name = "CBBootDelaySecond";
-			this.CBBootDelaySecond.Size = new System.Drawing.Size(508, 28);
+			this.CBBootDelaySecond.Size = new System.Drawing.Size(558, 28);
 			this.CBBootDelaySecond.TabIndex = 0;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 57);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(486, 60);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Windows7でWindRectをスタートアップに登録してログオン時に起動したとき、\r\nウィンドウが正しい位置に表示されないことがあります。\r\nその場合、これを" +
-    "有効にすると解消するかもしれません。";
 			// 
 			// その他の設定Dlg
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(544, 201);
+			this.ClientSize = new System.Drawing.Size(594, 191);
 			this.Controls.Add(this.groupBox1);
 			this.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

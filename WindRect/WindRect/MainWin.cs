@@ -87,8 +87,9 @@ namespace WindRect
 			{
 				if (otherRi.XPos == ri.XPos && otherRi.YPos == ri.YPos)
 				{
-					ri.XPos += 5;
-					ri.YPos += 5;
+					const int XY_STEP = 5;
+					ri.XPos += XY_STEP;
+					ri.YPos += XY_STEP;
 					goto findSamePosLoopRestart;
 				}
 			}
@@ -103,13 +104,13 @@ namespace WindRect
 			this.Close();
 		}
 
-		private void 右クリックを抑止するRToolStripMenuItem_Click(object sender, EventArgs e)
+		private void 右クリックでメニューを表示するRToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Gnd.I.RightClickOff = Gnd.I.RightClickOff == false;
 			this.UpdateUi();
 		}
 
-		private void ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem_Click(object sender, EventArgs e)
+		private void ダブルクリックでテキストを編集するDToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Gnd.I.DoubleClickOff = Gnd.I.DoubleClickOff == false;
 			this.UpdateUi();
@@ -117,9 +118,10 @@ namespace WindRect
 
 		private void UpdateUi()
 		{
-			this.右クリックを抑止するRToolStripMenuItem.Checked = Gnd.I.RightClickOff;
-			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Checked = Gnd.I.DoubleClickOff;
+			this.右クリックでメニューを表示するRToolStripMenuItem.Checked = Gnd.I.RightClickOff == false;
+			this.ダブルクリックによるテキスト編集を抑止するDToolStripMenuItem.Checked = Gnd.I.DoubleClickOff == false;
 			this.タスクアイコンをダブルクリックで追加AToolStripMenuItem.Checked = Gnd.I.TaskIconDoubleClickAndAddRect;
+			this.タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem.Checked = Gnd.I.TaskIconClickAndShowAllRectOff == false;
 
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{
@@ -129,15 +131,42 @@ namespace WindRect
 
 		private void TaskIcon_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
+			if (e.Button != MouseButtons.Left)
+				return;
+
 			if (Gnd.I.TaskIconDoubleClickAndAddRect == false)
 				return;
 
 			this.追加AToolStripMenuItem_Click(null, null);
 		}
 
+		private void TaskIcon_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button != MouseButtons.Left)
+				return;
+
+			if (Gnd.I.TaskIconClickAndShowAllRectOff)
+				return;
+
+			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+			{
+				if (ri.MostTop == false)
+				{
+					ri.Win.TopMost = true;
+					ri.Win.TopMost = false;
+				}
+			}
+		}
+
 		private void タスクアイコンをダブルクリックで追加AToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Gnd.I.TaskIconDoubleClickAndAddRect = Gnd.I.TaskIconDoubleClickAndAddRect == false;
+			this.UpdateUi();
+		}
+
+		private void タスクアイコンをクリックで前面表示を抑止するZToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Gnd.I.TaskIconClickAndShowAllRectOff = Gnd.I.TaskIconClickAndShowAllRectOff == false;
 			this.UpdateUi();
 		}
 
