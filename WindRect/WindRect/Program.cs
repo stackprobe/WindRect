@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using Microsoft.Win32;
 
 namespace WindRect
 {
@@ -19,6 +20,7 @@ namespace WindRect
 		{
 			Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
 			AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+			SystemEvents.SessionEnding += new SessionEndingEventHandler(SessionEnding);
 
 			Mutex procMutex = new Mutex(false, "STACKPROBE WindRect colored rectangle Process mutex");
 
@@ -56,6 +58,7 @@ namespace WindRect
 
 			Environment.Exit(1);
 		}
+
 		private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
 		{
 			try
@@ -71,6 +74,11 @@ namespace WindRect
 			{ }
 
 			Environment.Exit(2);
+		}
+
+		private static void SessionEnding(object sender, SessionEndingEventArgs e)
+		{
+			Environment.Exit(3);
 		}
 	}
 }

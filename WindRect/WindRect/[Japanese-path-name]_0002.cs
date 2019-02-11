@@ -91,6 +91,7 @@
 			this.Name = "その他の設定Dlg";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "その他の設定";
+			this.TopMost = true;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.その他の設定Dlg_FormClosing);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.その他の設定Dlg_FormClosed);
 			this.Load += new System.EventHandler(this.その他の設定Dlg_Load);
