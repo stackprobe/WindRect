@@ -36,7 +36,7 @@ namespace WindRect
 		public bool RightClickOff = false;
 		public bool DoubleClickOff = false;
 		public bool TaskIconDoubleClickAndAddRect = false;
-		public bool AutoReupdateUi = false; // 隠し設定
+		public bool Reserved_0001 = false; // 使っていない。
 
 		// }
 
@@ -149,7 +149,7 @@ namespace WindRect
 				this.RightClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.DoubleClickOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 				this.TaskIconDoubleClickAndAddRect = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
-				this.AutoReupdateUi = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+				this.Reserved_0001 = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 
 				// }
 
@@ -217,7 +217,7 @@ namespace WindRect
 				lines.Add("" + (this.RightClickOff ? 1 : 0));
 				lines.Add("" + (this.DoubleClickOff ? 1 : 0));
 				lines.Add("" + (this.TaskIconDoubleClickAndAddRect ? 1 : 0));
-				lines.Add("" + (this.AutoReupdateUi ? 1 : 0));
+				lines.Add("" + (this.Reserved_0001 ? 1 : 0));
 
 				// }
 

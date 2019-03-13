@@ -43,7 +43,7 @@
 			this.groupBox1.Controls.Add(this.CBBootDelaySecond);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(570, 140);
+			this.groupBox1.Size = new System.Drawing.Size(570, 150);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "遅延起動";
@@ -54,10 +54,11 @@
 			this.label1.Font = new System.Drawing.Font("メイリオ", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.label1.Location = new System.Drawing.Point(6, 57);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(514, 51);
+			this.label1.Size = new System.Drawing.Size(514, 68);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "(Windows7で)WindRectをスタートアップに登録するなどしてログオン時に起動したとき、\r\nウィンドウが正しい位置に表示されなかったり、『常に手前に表示" +
-    "』が適用されないことがあります。\r\nその場合、これを有効にすると解消するかもしれません。";
+			this.label1.Text = "本プログラムを起動してからアイコンとウィンドウを表示するまで一定時間待ちます。\r\n(Windows7で)WindRectをスタートアップに登録するなどしてログオン" +
+    "時に起動したとき、\r\nウィンドウが正しい位置に表示されなかったり、『常に手前に表示』が適用されないことがあります。\r\nその場合、これを有効にすると解消するかもし" +
+    "れません。";
 			// 
 			// CBBootDelaySecond
 			// 

@@ -59,7 +59,7 @@
 			this.TextText.Name = "TextText";
 			this.TextText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.TextText.Size = new System.Drawing.Size(600, 334);
-			this.TextText.TabIndex = 1;
+			this.TextText.TabIndex = 2;
 			this.TextText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextText_KeyPress);
 			// 
 			// label1
@@ -69,7 +69,7 @@
 			this.label1.Location = new System.Drawing.Point(12, 388);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(74, 20);
-			this.label1.TabIndex = 2;
+			this.label1.TabIndex = 3;
 			this.label1.Text = "フォント名";
 			// 
 			// SizeText
@@ -79,7 +79,7 @@
 			this.SizeText.MaxLength = 3;
 			this.SizeText.Name = "SizeText";
 			this.SizeText.Size = new System.Drawing.Size(120, 27);
-			this.SizeText.TabIndex = 5;
+			this.SizeText.TabIndex = 7;
 			this.SizeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.SizeText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SizeText_KeyPress);
 			// 
@@ -90,7 +90,7 @@
 			this.label2.Location = new System.Drawing.Point(386, 422);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 20);
-			this.label2.TabIndex = 4;
+			this.label2.TabIndex = 6;
 			this.label2.Text = "フォントサイズ";
 			// 
 			// ColorRText
@@ -99,7 +99,7 @@
 			this.ColorRText.MaxLength = 3;
 			this.ColorRText.Name = "ColorRText";
 			this.ColorRText.Size = new System.Drawing.Size(120, 27);
-			this.ColorRText.TabIndex = 7;
+			this.ColorRText.TabIndex = 1;
 			this.ColorRText.Text = "255";
 			this.ColorRText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.ColorRText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ColorRText_KeyPress);
@@ -110,7 +110,7 @@
 			this.label3.Location = new System.Drawing.Point(6, 29);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(18, 20);
-			this.label3.TabIndex = 6;
+			this.label3.TabIndex = 0;
 			this.label3.Text = "R";
 			// 
 			// label4
@@ -119,7 +119,7 @@
 			this.label4.Location = new System.Drawing.Point(6, 62);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(18, 20);
-			this.label4.TabIndex = 8;
+			this.label4.TabIndex = 2;
 			this.label4.Text = "G";
 			// 
 			// ColorGText
@@ -128,7 +128,7 @@
 			this.ColorGText.MaxLength = 3;
 			this.ColorGText.Name = "ColorGText";
 			this.ColorGText.Size = new System.Drawing.Size(120, 27);
-			this.ColorGText.TabIndex = 9;
+			this.ColorGText.TabIndex = 3;
 			this.ColorGText.Text = "255";
 			this.ColorGText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.ColorGText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ColorGText_KeyPress);
@@ -139,7 +139,7 @@
 			this.label5.Location = new System.Drawing.Point(6, 95);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(18, 20);
-			this.label5.TabIndex = 10;
+			this.label5.TabIndex = 4;
 			this.label5.Text = "B";
 			// 
 			// ColorBText
@@ -148,7 +148,7 @@
 			this.ColorBText.MaxLength = 3;
 			this.ColorBText.Name = "ColorBText";
 			this.ColorBText.Size = new System.Drawing.Size(120, 27);
-			this.ColorBText.TabIndex = 11;
+			this.ColorBText.TabIndex = 5;
 			this.ColorBText.Text = "255";
 			this.ColorBText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.ColorBText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ColorBText_KeyPress);
@@ -169,7 +169,7 @@
 			this.ResetBtn.Location = new System.Drawing.Point(492, 499);
 			this.ResetBtn.Name = "ResetBtn";
 			this.ResetBtn.Size = new System.Drawing.Size(120, 50);
-			this.ResetBtn.TabIndex = 13;
+			this.ResetBtn.TabIndex = 8;
 			this.ResetBtn.Text = "リセット";
 			this.ResetBtn.UseVisualStyleBackColor = true;
 			this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
@@ -183,7 +183,7 @@
 			this.FontCombo.Location = new System.Drawing.Point(92, 385);
 			this.FontCombo.Name = "FontCombo";
 			this.FontCombo.Size = new System.Drawing.Size(520, 28);
-			this.FontCombo.TabIndex = 3;
+			this.FontCombo.TabIndex = 4;
 			// 
 			// ClearBtn
 			// 
@@ -192,7 +192,7 @@
 			this.ClearBtn.Location = new System.Drawing.Point(459, 12);
 			this.ClearBtn.Name = "ClearBtn";
 			this.ClearBtn.Size = new System.Drawing.Size(153, 27);
-			this.ClearBtn.TabIndex = 12;
+			this.ClearBtn.TabIndex = 1;
 			this.ClearBtn.Text = "テキストのクリア";
 			this.ClearBtn.UseVisualStyleBackColor = true;
 			this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
@@ -203,7 +203,7 @@
 			this.色Btn.Location = new System.Drawing.Point(156, 92);
 			this.色Btn.Name = "色Btn";
 			this.色Btn.Size = new System.Drawing.Size(120, 27);
-			this.色Btn.TabIndex = 15;
+			this.色Btn.TabIndex = 6;
 			this.色Btn.Text = "色Dlg";
 			this.色Btn.UseVisualStyleBackColor = true;
 			this.色Btn.Click += new System.EventHandler(this.色Btn_Click);
@@ -221,7 +221,7 @@
 			this.groupBox1.Location = new System.Drawing.Point(12, 419);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(300, 130);
-			this.groupBox1.TabIndex = 16;
+			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "テキスト色";
 			// 
