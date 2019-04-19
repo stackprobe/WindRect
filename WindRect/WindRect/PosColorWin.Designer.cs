@@ -56,10 +56,14 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this._透明度Pct = new System.Windows.Forms.TrackBar();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			this.groupBox5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this._透明度Pct)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -432,11 +436,34 @@
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "画像";
 			// 
+			// groupBox5
+			// 
+			this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox5.Controls.Add(this._透明度Pct);
+			this.groupBox5.Location = new System.Drawing.Point(316, 221);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(306, 91);
+			this.groupBox5.TabIndex = 6;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "透明度";
+			// 
+			// _透明度Pct
+			// 
+			this._透明度Pct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this._透明度Pct.Location = new System.Drawing.Point(7, 26);
+			this._透明度Pct.Maximum = 95;
+			this._透明度Pct.Name = "_透明度Pct";
+			this._透明度Pct.Size = new System.Drawing.Size(293, 45);
+			this._透明度Pct.TabIndex = 0;
+			this._透明度Pct.TickFrequency = 5;
+			// 
 			// PosColorWin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(634, 521);
+			this.Controls.Add(this.groupBox5);
 			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
@@ -451,7 +478,7 @@
 			this.MinimizeBox = false;
 			this.Name = "PosColorWin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "位置とサイズと色と画像とテキストの変更";
+			this.Text = "位置とサイズと色と透明度と画像とテキストの変更";
 			this.TopMost = true;
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PosWin_FormClosed);
 			this.Load += new System.EventHandler(this.PosColorWin_Load);
@@ -463,6 +490,9 @@
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this._透明度Pct)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -496,5 +526,7 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.TrackBar _透明度Pct;
 	}
 }

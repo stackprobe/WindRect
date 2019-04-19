@@ -69,6 +69,7 @@ namespace WindRect
 			public int TextColorR;
 			public int TextColorG;
 			public int TextColorB;
+			public int 透明度Pct;
 
 			// RectInfo.*
 
@@ -99,6 +100,7 @@ namespace WindRect
 				this.TextColorR = 255;
 				this.TextColorG = 255;
 				this.TextColorB = 255;
+				this.透明度Pct = 0;
 
 				// RectInfo.*
 			}
@@ -125,6 +127,7 @@ namespace WindRect
 				dest.TextColorR = this.TextColorR;
 				dest.TextColorG = this.TextColorG;
 				dest.TextColorB = this.TextColorB;
+				dest.透明度Pct = this.透明度Pct;
 
 				// RectInfo.*
 
@@ -178,6 +181,7 @@ namespace WindRect
 					ri.TextColorR = Tools.ParseInt(lines[i++], 0, 255, 0);
 					ri.TextColorG = Tools.ParseInt(lines[i++], 0, 255, 0);
 					ri.TextColorB = Tools.ParseInt(lines[i++], 0, 255, 0);
+					ri.透明度Pct = Tools.ParseInt(lines[i++], 0, 95, 0);
 
 					// RectInfo.*
 
@@ -248,6 +252,7 @@ namespace WindRect
 					lines.Add("" + ri.TextColorR);
 					lines.Add("" + ri.TextColorG);
 					lines.Add("" + ri.TextColorB);
+					lines.Add("" + ri.透明度Pct);
 
 					// RectInfo.*
 				}

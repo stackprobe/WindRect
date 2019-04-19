@@ -52,6 +52,7 @@ namespace WindRect
 			this.WinColorB.Text = "" + this.RI.WinColorB;
 			this.ImageFile = this.RI.ImageFile;
 			this._タイリングChk.Checked = this.RI.ImageStretchFlag == false;
+			this._透明度Pct.Value = this.RI.透明度Pct;
 
 			this.UpdateUi();
 		}
@@ -85,6 +86,7 @@ namespace WindRect
 			this.RI.WinColorB = Tools.ParseInt(this.WinColorB.Text, 0, 255, 0);
 			this.RI.ImageFile = this.ImageFile;
 			this.RI.ImageStretchFlag = this._タイリングChk.Checked == false;
+			this.RI.透明度Pct = this._透明度Pct.Value;
 		}
 
 		private void ResetBtn_Click(object sender, EventArgs e)

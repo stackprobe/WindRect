@@ -72,6 +72,8 @@ namespace WindRect
 			this.常に手前に表示TToolStripMenuItem.Checked = this.RI.MostTop;
 			this.TopMost = this.RI.MostTop;
 
+			this.Opacity = 1.0 - this.RI.透明度Pct / 100.0;
+
 			try
 			{
 				if (this.RI.ImageFile != "")
