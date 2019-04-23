@@ -152,38 +152,25 @@ namespace WindRect
 				for (int index = 0; index < 16; index++)
 					defColors[index] = index * 0x081008 + 0x800000;
 
-				using (ColorDialog cd = new ColorDialog())
+				Color color;
+
 				{
-					{
-						int r = int.Parse(tbR.Text) & 0xff;
-						int g = int.Parse(tbG.Text) & 0xff;
-						int b = int.Parse(tbB.Text) & 0xff;
+					int r = int.Parse(tbR.Text) & 0xff;
+					int g = int.Parse(tbG.Text) & 0xff;
+					int b = int.Parse(tbB.Text) & 0xff;
 
-						//はじめに選択されている色を設定
-						cd.Color = Color.FromArgb(r, g, b);
-					}
+					color = Color.FromArgb(r, g, b);
+				}
 
-					//色の作成部分を表示可能にする
-					//デフォルトがTrueのため必要はない
-					//cd.AllowFullOpen = true;
-					//純色だけに制限しない
-					//デフォルトがFalseのため必要はない
-					//cd.SolidColorOnly = false;
-					//[作成した色]に指定した色（RGB値）を表示する
-					cd.CustomColors = defColors;
+				if (SaveLoadDialogs.SelectColor(ref color, defColors))
+				{
+					int r = color.R;
+					int g = color.G;
+					int b = color.B;
 
-					//ダイアログを表示する
-					if (cd.ShowDialog() == DialogResult.OK)
-					{
-						//選択された色の取得
-						int r = cd.Color.R;
-						int g = cd.Color.G;
-						int b = cd.Color.B;
-
-						tbR.Text = "" + r;
-						tbG.Text = "" + g;
-						tbB.Text = "" + b;
-					}
+					tbR.Text = "" + r;
+					tbG.Text = "" + g;
+					tbB.Text = "" + b;
 				}
 			}
 			catch

@@ -85,6 +85,7 @@
     <Compile Include="RectWin.Designer.cs">
       <DependentUpon>RectWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveLoadDialogs.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="Utils2.cs" />
     <Compile Include="その他の設定Dlg.cs">

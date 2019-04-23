@@ -140,44 +140,21 @@ namespace WindRect
 
 		private void ImageBtn_Click(object sender, EventArgs e)
 		{
-			//OpenFileDialogクラスのインスタンスを作成
-			using (OpenFileDialog ofd = new OpenFileDialog())
-			{
-				//はじめのファイル名を指定する
-				//はじめに「ファイル名」で表示される文字列を指定する
-				ofd.FileName = this.ImageFile == "" ? "*.bmp;*.gif;*.jpg;*.jpeg;*.png" : this.ImageFile;
-				//はじめに表示されるフォルダを指定する
-				//指定しない（空の文字列）の時は、現在のディレクトリが表示される
-				ofd.InitialDirectory = this.ImageFile == "" ? "" : Path.GetDirectoryName(this.ImageFile);
-				//[ファイルの種類]に表示される選択肢を指定する
-				//指定しないとすべてのファイルが表示される
-				ofd.Filter = "画像ファイル(*.bmp;*.gif;*.jpg;*.jpeg;*.png)|*.bmp;*.gif;*.jpg;*.jpeg;*.png|すべてのファイル(*.*)|*.*";
-				//"HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
-				//[ファイルの種類]ではじめに
-				//「すべてのファイル」が選択されているようにする
-				// フィルタの何番目かってことみたい...
-				ofd.FilterIndex = 0;
-				//タイトルを設定する
-				ofd.Title = "画像ファイルを選択して下さい";
-				//ダイアログボックスを閉じる前に現在のディレクトリを復元するようにする
-				ofd.RestoreDirectory = true;
-				//存在しないファイルの名前が指定されたとき警告を表示する
-				//デフォルトでTrueなので指定する必要はない
-				ofd.CheckFileExists = true;
-				//存在しないパスが指定されたとき警告を表示する
-				//デフォルトでTrueなので指定する必要はない
-				ofd.CheckPathExists = true;
+			string file = SaveLoadDialogs.LoadFile(
+				"画像ファイルを選択して下さい",
+				"",
+				this.ImageFile == "" ? "" : Path.GetDirectoryName(this.ImageFile),
+				this.ImageFile == "" ? "*.bmp;*.gif;*.jpg;*.jpeg;*.png" : this.ImageFile,
+				dlg =>
+				{
+					dlg.Filter = "画像ファイル(*.bmp;*.gif;*.jpg;*.jpeg;*.png)|*.bmp;*.gif;*.jpg;*.jpeg;*.png|すべてのファイル(*.*)|*.*";
+				});
 
-				//ダイアログを表示する
-				if (ofd.ShowDialog() == DialogResult.OK) // using ofd
-				{
-					this.ImageFile = Path.GetFullPath(ofd.FileName);
-				}
-				else
-				{
-					this.ImageFile = "";
-				}
-			}
+			if (file != null)
+				this.ImageFile = Path.GetFullPath(file);
+			else
+				this.ImageFile = "";
+
 			this.UpdateUi();
 		}
 
@@ -239,38 +216,25 @@ namespace WindRect
 				for (int index = 0; index < 16; index++)
 					defColors[index] = index * 0x081008 + 0x800000;
 
-				using (ColorDialog cd = new ColorDialog())
+				Color color;
+
 				{
-					{
-						int r = int.Parse(tbR.Text) & 0xff;
-						int g = int.Parse(tbG.Text) & 0xff;
-						int b = int.Parse(tbB.Text) & 0xff;
+					int r = int.Parse(tbR.Text) & 0xff;
+					int g = int.Parse(tbG.Text) & 0xff;
+					int b = int.Parse(tbB.Text) & 0xff;
 
-						//はじめに選択されている色を設定
-						cd.Color = Color.FromArgb(r, g, b);
-					}
+					color = Color.FromArgb(r, g, b);
+				}
 
-					//色の作成部分を表示可能にする
-					//デフォルトがTrueのため必要はない
-					//cd.AllowFullOpen = true;
-					//純色だけに制限しない
-					//デフォルトがFalseのため必要はない
-					//cd.SolidColorOnly = false;
-					//[作成した色]に指定した色（RGB値）を表示する
-					cd.CustomColors = defColors;
+				if (SaveLoadDialogs.SelectColor(ref color, defColors))
+				{
+					int r = color.R;
+					int g = color.G;
+					int b = color.B;
 
-					//ダイアログを表示する
-					if (cd.ShowDialog() == DialogResult.OK)
-					{
-						//選択された色の取得
-						int r = cd.Color.R;
-						int g = cd.Color.G;
-						int b = cd.Color.B;
-
-						tbR.Text = "" + r;
-						tbG.Text = "" + g;
-						tbB.Text = "" + b;
-					}
+					tbR.Text = "" + r;
+					tbG.Text = "" + g;
+					tbB.Text = "" + b;
 				}
 			}
 			catch
