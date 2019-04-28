@@ -255,10 +255,14 @@ namespace WindRect
 
 		private void 追加AToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+#if true
+			Gnd.I.MainWin.NewRect();
+#else // old
 			Gnd.RectInfo ri = new Gnd.RectInfo();
 			Gnd.I.RectInfoList.Add(ri);
 			Gnd.I.SaveData();
 			new RectWin(ri).Show();
+#endif
 		}
 
 		private void 複製DToolStripMenuItem_Click(object sender, EventArgs e)

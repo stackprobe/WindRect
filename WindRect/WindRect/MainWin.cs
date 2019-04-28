@@ -75,28 +75,7 @@ namespace WindRect
 
 		private void 追加AToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Gnd.RectInfo ri;
-
-			if (Gnd.I.DefRect != null)
-				ri = Gnd.I.DefRect.GetClone();
-			else
-				ri = new Gnd.RectInfo();
-
-		findSamePosLoopRestart:
-			foreach (Gnd.RectInfo otherRi in Gnd.I.RectInfoList)
-			{
-				if (otherRi.XPos == ri.XPos && otherRi.YPos == ri.YPos)
-				{
-					const int XY_STEP = 5;
-					ri.XPos += XY_STEP;
-					ri.YPos += XY_STEP;
-					goto findSamePosLoopRestart;
-				}
-			}
-
-			Gnd.I.RectInfoList.Add(ri);
-			Gnd.I.SaveData();
-			new RectWin(ri).Show();
+			this.NewRect();
 		}
 
 		private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,7 +116,7 @@ namespace WindRect
 			if (Gnd.I.TaskIconDoubleClickAndAddRect == false)
 				return;
 
-			this.追加AToolStripMenuItem_Click(null, null);
+			this.NewRect();
 		}
 
 		private void TaskIcon_MouseClick(object sender, MouseEventArgs e)
@@ -256,6 +235,32 @@ namespace WindRect
 		private void AfterShowDlg()
 		{
 			this.TaskIcon.Visible = true;
+		}
+
+		public void NewRect()
+		{
+			Gnd.RectInfo ri;
+
+			if (Gnd.I.DefRect != null)
+				ri = Gnd.I.DefRect.GetClone();
+			else
+				ri = new Gnd.RectInfo();
+
+		findSamePosLoopRestart:
+			foreach (Gnd.RectInfo otherRi in Gnd.I.RectInfoList)
+			{
+				if (otherRi.XPos == ri.XPos && otherRi.YPos == ri.YPos)
+				{
+					const int XY_STEP = 5;
+					ri.XPos += XY_STEP;
+					ri.YPos += XY_STEP;
+					goto findSamePosLoopRestart;
+				}
+			}
+
+			Gnd.I.RectInfoList.Add(ri);
+			Gnd.I.SaveData();
+			new RectWin(ri).Show();
 		}
 	}
 }
