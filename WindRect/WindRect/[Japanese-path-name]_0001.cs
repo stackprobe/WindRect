@@ -52,6 +52,8 @@ namespace WindRect
 		private static readonly int[] BDSecondList = new int[]
 		{
 			0,
+			10,
+			20,
 			30,
 			60,
 			120,

@@ -51,20 +51,41 @@ namespace WindRect
 			this.Visible = false;
 			Gnd.I.LoadData();
 
-			this.BeginInvoke((MethodInvoker)delegate
+			if (1 <= Gnd.I.BootDelaySecond)
 			{
-				Thread.Sleep(Gnd.I.BootDelaySecond * 1000);
+				this.BootDelayCount = Gnd.I.BootDelaySecond;
+				this.BootTimer.Enabled = true;
+				this.BT_Enabled = true;
+			}
+			else
+				this.BootRtn();
+		}
 
-				foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
-				{
-					new RectWin(ri).Show();
-				}
-				this.TaskIcon.Visible = true;
+		private bool BT_Enabled = false;
+		private int BootDelayCount;
 
-				Gnd.I.MainWin = this;
+		private void BootTimer_Tick(object sender, EventArgs e)
+		{
+			if (this.BT_Enabled == false || 0 <= --this.BootDelayCount)
+				return;
 
-				this.UpdateUi();
-			});
+			this.BootTimer.Enabled = false;
+			this.BT_Enabled = false;
+
+			this.BootRtn();
+		}
+
+		private void BootRtn()
+		{
+			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+			{
+				new RectWin(ri).Show();
+			}
+			this.TaskIcon.Visible = true;
+
+			Gnd.I.MainWin = this;
+
+			this.UpdateUi();
 		}
 
 		private void MainWin_FormClosed(object sender, FormClosedEventArgs e)
@@ -127,6 +148,20 @@ namespace WindRect
 			if (Gnd.I.TaskIconClickAndShowAllRectOff)
 				return;
 
+#if true
+			// .TopMost == true なのに背面に回っている RectWin を全面に回すため、全ての RectWin を再設定する。
+
+			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				if (ri.MostTop)
+					ri.Win.TopMost = false;
+
+			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				ri.Win.TopMost = true;
+
+			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
+				if (ri.MostTop == false)
+					ri.Win.TopMost = false;
+#else // old
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{
 				if (ri.MostTop == false)
@@ -135,6 +170,7 @@ namespace WindRect
 					ri.Win.TopMost = false;
 				}
 			}
+#endif
 		}
 
 		private void タスクアイコンをダブルクリックで追加AToolStripMenuItem_Click(object sender, EventArgs e)

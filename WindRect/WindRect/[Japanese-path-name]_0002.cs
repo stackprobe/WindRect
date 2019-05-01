@@ -68,6 +68,8 @@
 			this.CBBootDelaySecond.FormattingEnabled = true;
 			this.CBBootDelaySecond.Items.AddRange(new object[] {
             "無効",
+            "有効(10秒)",
+            "有効(20秒)",
             "有効(30秒)",
             "有効(1分)",
             "有効(2分)",

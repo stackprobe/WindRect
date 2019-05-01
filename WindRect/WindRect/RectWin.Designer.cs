@@ -44,6 +44,9 @@
 			this.アプリケーションAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.終了XToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.RectText = new System.Windows.Forms.Label();
+			this.その他OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+			this.テキストをファイルに保存するSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.RClickMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,10 +61,12 @@
             this.追加AToolStripMenuItem,
             this.複製DToolStripMenuItem,
             this.終了XToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.その他OToolStripMenuItem,
             this.toolStripMenuItem3,
             this.アプリケーションAToolStripMenuItem});
 			this.RClickMenu.Name = "TaskMenu";
-			this.RClickMenu.Size = new System.Drawing.Size(206, 176);
+			this.RClickMenu.Size = new System.Drawing.Size(206, 226);
 			// 
 			// 位置と色PToolStripMenuItem
 			// 
@@ -157,6 +162,26 @@
 			this.RectText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseMove);
 			this.RectText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseUp);
 			// 
+			// その他OToolStripMenuItem
+			// 
+			this.その他OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.テキストをファイルに保存するSToolStripMenuItem});
+			this.その他OToolStripMenuItem.Name = "その他OToolStripMenuItem";
+			this.その他OToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+			this.その他OToolStripMenuItem.Text = "その他(&O)";
+			// 
+			// toolStripMenuItem4
+			// 
+			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+			this.toolStripMenuItem4.Size = new System.Drawing.Size(202, 6);
+			// 
+			// テキストをファイルに保存するSToolStripMenuItem
+			// 
+			this.テキストをファイルに保存するSToolStripMenuItem.Name = "テキストをファイルに保存するSToolStripMenuItem";
+			this.テキストをファイルに保存するSToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+			this.テキストをファイルに保存するSToolStripMenuItem.Text = "テキストの内容をファイルに保存する(&S)";
+			this.テキストをファイルに保存するSToolStripMenuItem.Click += new System.EventHandler(this.テキストをファイルに保存するSToolStripMenuItem_Click);
+			// 
 			// RectWin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -199,5 +224,8 @@
 		private System.Windows.Forms.ToolStripMenuItem 複製DToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 追加AToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem その他OToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem テキストをファイルに保存するSToolStripMenuItem;
 	}
 }

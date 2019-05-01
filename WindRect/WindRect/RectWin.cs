@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Permissions;
+using System.IO;
 
 namespace WindRect
 {
@@ -314,6 +315,21 @@ namespace WindRect
 		private void RectText_DoubleClick(object sender, EventArgs e)
 		{
 			this.RectWin_DoubleClick(null, null);
+		}
+
+		private void テキストをファイルに保存するSToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string outFile = SaveLoadDialogs.SaveFile(
+				"保存先のファイルを指定して下さい",
+				"テキスト:txt",
+				Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+				"WindRect_Text_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt"
+				);
+
+			if (outFile != null)
+			{
+				File.WriteAllText(outFile, Utils2.Unescape(this.RI.Text), Encoding.UTF8);
+			}
 		}
 	}
 }
