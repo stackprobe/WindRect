@@ -55,27 +55,31 @@ namespace WindRect
 			{
 				this.BootDelayCount = Gnd.I.BootDelaySecond;
 				this.BootTimer.Enabled = true;
-				this.BT_Enabled = true;
 			}
 			else
 				this.BootRtn();
 		}
 
-		private bool BT_Enabled = false;
 		private int BootDelayCount;
 
 		private void BootTimer_Tick(object sender, EventArgs e)
 		{
-			if (this.BT_Enabled == false || 0 <= --this.BootDelayCount)
-				return;
-
-			this.BootTimer.Enabled = false;
-			this.BT_Enabled = false;
-
-			this.BootRtn();
+			if (--this.BootDelayCount == 0)
+			{
+				this.BootTimer.Enabled = false;
+				this.BootRtn();
+			}
 		}
 
 		private void BootRtn()
+		{
+			this.BeginInvoke((MethodInvoker)delegate
+			{
+				this.BootRtn2();
+			});
+		}
+
+		private void BootRtn2()
 		{
 			foreach (Gnd.RectInfo ri in Gnd.I.RectInfoList)
 			{

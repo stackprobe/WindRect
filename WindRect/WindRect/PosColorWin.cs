@@ -138,6 +138,16 @@ namespace WindRect
 			this.KeyPressCommon(e);
 		}
 
+		private void _透明度Pct_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			this.KeyPressCommon(e);
+		}
+
+		private void _タイリングChk_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			this.KeyPressCommon(e);
+		}
+
 		private void ImageBtn_Click(object sender, EventArgs e)
 		{
 			string file = SaveLoadDialogs.LoadFile(

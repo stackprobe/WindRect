@@ -199,15 +199,16 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(300, 300);
+			this.ClientSize = new System.Drawing.Size(284, 261);
 			this.ContextMenuStrip = this.TaskMenu;
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Location = new System.Drawing.Point(-400, -400);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "MainWin";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "WindRect";
+			this.Text = "WindRect_HiddenMainWin";
 			this.Activated += new System.EventHandler(this.MainWin_Activated);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWin_FormClosed);
 			this.Load += new System.EventHandler(this.MainWin_Load);

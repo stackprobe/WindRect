@@ -256,7 +256,7 @@
 			this.ResetBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.ResetBtn.Name = "ResetBtn";
 			this.ResetBtn.Size = new System.Drawing.Size(169, 54);
-			this.ResetBtn.TabIndex = 5;
+			this.ResetBtn.TabIndex = 6;
 			this.ResetBtn.Text = "リセット";
 			this.ResetBtn.UseVisualStyleBackColor = true;
 			this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
@@ -315,6 +315,7 @@
 			this._タイリングChk.TabIndex = 1;
 			this._タイリングChk.Text = "タイリング";
 			this._タイリングChk.UseVisualStyleBackColor = true;
+			this._タイリングChk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._タイリングChk_KeyPress);
 			// 
 			// EditTextBtn
 			// 
@@ -353,7 +354,7 @@
 			this.これをデフォルトにするBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.これをデフォルトにするBtn.Name = "これをデフォルトにするBtn";
 			this.これをデフォルトにするBtn.Size = new System.Drawing.Size(298, 27);
-			this.これをデフォルトにするBtn.TabIndex = 4;
+			this.これをデフォルトにするBtn.TabIndex = 5;
 			this.これをデフォルトにするBtn.Text = "この設定をデフォルトにする";
 			this.これをデフォルトにするBtn.UseVisualStyleBackColor = true;
 			this.これをデフォルトにするBtn.Click += new System.EventHandler(this.これをデフォルトにするBtn_Click);
@@ -432,7 +433,7 @@
 			this.groupBox4.Location = new System.Drawing.Point(12, 318);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(610, 127);
-			this.groupBox4.TabIndex = 3;
+			this.groupBox4.TabIndex = 4;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "画像";
 			// 
@@ -443,7 +444,7 @@
 			this.groupBox5.Location = new System.Drawing.Point(316, 221);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(306, 91);
-			this.groupBox5.TabIndex = 6;
+			this.groupBox5.TabIndex = 3;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "透明度";
 			// 
@@ -457,6 +458,7 @@
 			this._透明度Pct.Size = new System.Drawing.Size(293, 45);
 			this._透明度Pct.TabIndex = 0;
 			this._透明度Pct.TickFrequency = 5;
+			this._透明度Pct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._透明度Pct_KeyPress);
 			// 
 			// PosColorWin
 			// 
