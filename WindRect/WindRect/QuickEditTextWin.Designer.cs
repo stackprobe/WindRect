@@ -59,7 +59,7 @@
             this.日付を挿入CtrlDToolStripMenuItem,
             this.日時を挿入CtrlTToolStripMenuItem});
 			this.MainTextMenu.Name = "MainTextMenu";
-			this.MainTextMenu.Size = new System.Drawing.Size(174, 70);
+			this.MainTextMenu.Size = new System.Drawing.Size(174, 48);
 			// 
 			// 日付を挿入CtrlDToolStripMenuItem
 			// 
@@ -92,6 +92,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "テキスト (Ctrl+Enterで確定)";
 			this.TopMost = true;
+			this.Deactivate += new System.EventHandler(this.QuickEditTextWin_Deactivate);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QuickEditTextWin_FormClosed);
 			this.Load += new System.EventHandler(this.QuickEditTextWin_Load);
 			this.Shown += new System.EventHandler(this.QuickEditTextWin_Shown);

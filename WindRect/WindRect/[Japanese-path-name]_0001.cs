@@ -40,11 +40,13 @@ namespace WindRect
 		private void LoadData()
 		{
 			this.CBBootDelaySecond.SelectedIndex = BDSecondToIndex(Gnd.I.BootDelaySecond);
+			this.CBQuickEditTextFocusOutEditEnd.Checked = Gnd.I.QuickEditTextFocusOutEditEnd;
 		}
 
 		private void SaveData()
 		{
 			Gnd.I.BootDelaySecond = IndexToBDSecond(this.CBBootDelaySecond.SelectedIndex);
+			Gnd.I.QuickEditTextFocusOutEditEnd = this.CBQuickEditTextFocusOutEditEnd.Checked;
 		}
 
 		// ---- BDSecondList ----

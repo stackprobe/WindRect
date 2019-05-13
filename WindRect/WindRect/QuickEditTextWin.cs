@@ -98,5 +98,13 @@ namespace WindRect
 		{
 			this.MainText.SelectedText = str + "\r\n";
 		}
+
+		private void QuickEditTextWin_Deactivate(object sender, EventArgs e)
+		{
+			if (Gnd.I.QuickEditTextFocusOutEditEnd)
+			{
+				this.Close();
+			}
+		}
 	}
 }

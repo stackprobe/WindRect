@@ -44,6 +44,7 @@ namespace WindRect
 
 		public int BootDelaySecond = 0;
 		public bool TaskIconClickAndShowAllRectOff = false;
+		public bool QuickEditTextFocusOutEditEnd = false;
 
 		// }
 
@@ -199,6 +200,7 @@ namespace WindRect
 
 				this.BootDelaySecond = Tools.ParseInt(lines[i++], 0, 600, 0);
 				this.TaskIconClickAndShowAllRectOff = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
+				this.QuickEditTextFocusOutEditEnd = Tools.ParseInt(lines[i++], 0, 1, 0) == 1;
 
 				// }
 			}
@@ -270,6 +272,7 @@ namespace WindRect
 
 				lines.Add("" + this.BootDelaySecond);
 				lines.Add("" + (this.TaskIconClickAndShowAllRectOff ? 1 : 0));
+				lines.Add("" + (this.QuickEditTextFocusOutEditEnd ? 1 : 0));
 
 				// }
 

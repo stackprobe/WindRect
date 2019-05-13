@@ -32,7 +32,11 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.CBBootDelaySecond = new System.Windows.Forms.ComboBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.CBQuickEditTextFocusOutEditEnd = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -79,11 +83,43 @@
 			this.CBBootDelaySecond.Size = new System.Drawing.Size(558, 28);
 			this.CBBootDelaySecond.TabIndex = 0;
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.label2);
+			this.groupBox2.Controls.Add(this.CBQuickEditTextFocusOutEditEnd);
+			this.groupBox2.Location = new System.Drawing.Point(12, 168);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(570, 121);
+			this.groupBox2.TabIndex = 1;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Quickテキスト編集";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("メイリオ", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.label2.Location = new System.Drawing.Point(6, 53);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(470, 34);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "矩形をダブルクリックして開始したテキスト編集について、\r\nテキスト編集ウィンドウがフォーカスを失ったときに、編集を終了するかどうか設定します。";
+			// 
+			// CBQuickEditTextFocusOutEditEnd
+			// 
+			this.CBQuickEditTextFocusOutEditEnd.AutoSize = true;
+			this.CBQuickEditTextFocusOutEditEnd.Location = new System.Drawing.Point(6, 26);
+			this.CBQuickEditTextFocusOutEditEnd.Name = "CBQuickEditTextFocusOutEditEnd";
+			this.CBQuickEditTextFocusOutEditEnd.Size = new System.Drawing.Size(197, 24);
+			this.CBQuickEditTextFocusOutEditEnd.TabIndex = 0;
+			this.CBQuickEditTextFocusOutEditEnd.Text = "フォーカスアウトで編集終了";
+			this.CBQuickEditTextFocusOutEditEnd.UseVisualStyleBackColor = true;
+			// 
 			// その他の設定Dlg
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(594, 191);
+			this.ClientSize = new System.Drawing.Size(594, 301);
+			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -101,6 +137,8 @@
 			this.Shown += new System.EventHandler(this.その他の設定Dlg_Shown);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -110,5 +148,8 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox CBBootDelaySecond;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.CheckBox CBQuickEditTextFocusOutEditEnd;
+		private System.Windows.Forms.Label label2;
 	}
 }
