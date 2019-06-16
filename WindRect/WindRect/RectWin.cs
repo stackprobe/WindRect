@@ -13,17 +13,34 @@ namespace WindRect
 {
 	public partial class RectWin : Form
 	{
-		#region [X] ALT+F4 抑止
+		#region [X] ALT+F4 抑止 +a
+
+		private string WPClipboardText = null;
 
 		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
 		protected override void WndProc(ref Message m)
 		{
 			const int WM_SYSCOMMAND = 0x112;
+			const int WM_LBUTTONDCLICK = 0x203;
 			const long SC_CLOSE = 0xF060L;
 
 			if (m.Msg == WM_SYSCOMMAND && (m.WParam.ToInt64() & 0xFFF0L) == SC_CLOSE)
 			{
 				return;
+			}
+			if (m.Msg == WM_LBUTTONDCLICK)
+			{
+				try
+				{
+					IDataObject d = Clipboard.GetDataObject();
+
+					if (d.GetDataPresent(DataFormats.Text))
+					{
+						this.WPClipboardText = d.GetData(DataFormats.Text).ToString();
+					}
+				}
+				catch
+				{ }
 			}
 			base.WndProc(ref m);
 		}
@@ -312,8 +329,15 @@ namespace WindRect
 			}
 		}
 
+		// Labelをダブルクリックすると、その内容がクリップボードにコピーされる。----> WndProcでクリップボードの内容を憶えておいて、ここで復元する。
+
 		private void RectText_DoubleClick(object sender, EventArgs e)
 		{
+			if (this.WPClipboardText != null)
+			{
+				Clipboard.SetData(DataFormats.Text, this.WPClipboardText);
+				this.WPClipboardText = null;
+			}
 			this.RectWin_DoubleClick(null, null);
 		}
 
