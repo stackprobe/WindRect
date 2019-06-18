@@ -40,13 +40,13 @@
 			this.複製DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.剥がすCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+			this.その他OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.テキストをファイルに保存するSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
 			this.アプリケーションAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.終了XToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.RectText = new System.Windows.Forms.Label();
-			this.その他OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-			this.テキストをファイルに保存するSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.RClickMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -66,7 +66,7 @@
             this.toolStripMenuItem3,
             this.アプリケーションAToolStripMenuItem});
 			this.RClickMenu.Name = "TaskMenu";
-			this.RClickMenu.Size = new System.Drawing.Size(206, 226);
+			this.RClickMenu.Size = new System.Drawing.Size(206, 204);
 			// 
 			// 位置と色PToolStripMenuItem
 			// 
@@ -128,6 +128,26 @@
 			this.剥がすCToolStripMenuItem.Text = "剥がす(&C)";
 			this.剥がすCToolStripMenuItem.Click += new System.EventHandler(this.閉じるCToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem4
+			// 
+			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+			this.toolStripMenuItem4.Size = new System.Drawing.Size(202, 6);
+			// 
+			// その他OToolStripMenuItem
+			// 
+			this.その他OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.テキストをファイルに保存するSToolStripMenuItem});
+			this.その他OToolStripMenuItem.Name = "その他OToolStripMenuItem";
+			this.その他OToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+			this.その他OToolStripMenuItem.Text = "その他(&O)";
+			// 
+			// テキストをファイルに保存するSToolStripMenuItem
+			// 
+			this.テキストをファイルに保存するSToolStripMenuItem.Name = "テキストをファイルに保存するSToolStripMenuItem";
+			this.テキストをファイルに保存するSToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
+			this.テキストをファイルに保存するSToolStripMenuItem.Text = "テキストの内容をファイルに保存する(&S)";
+			this.テキストをファイルに保存するSToolStripMenuItem.Click += new System.EventHandler(this.テキストをファイルに保存するSToolStripMenuItem_Click);
+			// 
 			// toolStripMenuItem3
 			// 
 			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
@@ -159,28 +179,9 @@
 			this.RectText.Text = "準備しています...";
 			this.RectText.DoubleClick += new System.EventHandler(this.RectText_DoubleClick);
 			this.RectText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseDown);
+			this.RectText.MouseEnter += new System.EventHandler(this.RectText_MouseEnter);
 			this.RectText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseMove);
 			this.RectText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectText_MouseUp);
-			// 
-			// その他OToolStripMenuItem
-			// 
-			this.その他OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.テキストをファイルに保存するSToolStripMenuItem});
-			this.その他OToolStripMenuItem.Name = "その他OToolStripMenuItem";
-			this.その他OToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-			this.その他OToolStripMenuItem.Text = "その他(&O)";
-			// 
-			// toolStripMenuItem4
-			// 
-			this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-			this.toolStripMenuItem4.Size = new System.Drawing.Size(202, 6);
-			// 
-			// テキストをファイルに保存するSToolStripMenuItem
-			// 
-			this.テキストをファイルに保存するSToolStripMenuItem.Name = "テキストをファイルに保存するSToolStripMenuItem";
-			this.テキストをファイルに保存するSToolStripMenuItem.Size = new System.Drawing.Size(252, 22);
-			this.テキストをファイルに保存するSToolStripMenuItem.Text = "テキストの内容をファイルに保存する(&S)";
-			this.テキストをファイルに保存するSToolStripMenuItem.Click += new System.EventHandler(this.テキストをファイルに保存するSToolStripMenuItem_Click);
 			// 
 			// RectWin
 			// 
