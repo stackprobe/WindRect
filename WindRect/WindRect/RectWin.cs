@@ -289,29 +289,6 @@ namespace WindRect
 				this.ContextMenuStrip = this.BkContextMenuStrip;
 		}
 
-		private void RectWin_DoubleClick(object sender, EventArgs e)
-		{
-			if (Gnd.I.DoubleClickOff)
-				return;
-
-			using (QuickEditTextWin f = new QuickEditTextWin(this, this.RI.Text))
-			{
-				f.ShowDialog();
-
-				string text = f.RetText;
-
-				if (text != this.RI.Text)
-				{
-					text = text.Trim();
-
-					this.RI.Text = text;
-					Gnd.I.SaveData();
-					Gnd.I.AdjustToTextSize = true;
-					this.UpdateUi();
-				}
-			}
-		}
-
 		// Labelをダブルクリックすると、その内容がクリップボードにコピーされる。
 		// 対策 -> ダブルクリックされる前にクリップボードの内容を憶えておいて、後で復元する。
 
@@ -336,12 +313,38 @@ namespace WindRect
 
 		private void RectText_DoubleClick(object sender, EventArgs e)
 		{
+			if (Gnd.I.DoubleClickOff)
+				return;
+
 			if (this.KeptClipboardText != null)
 			{
 				Clipboard.SetData(DataFormats.Text, this.KeptClipboardText);
 				this.KeptClipboardText = null;
 			}
 			this.RectWin_DoubleClick(null, null);
+		}
+
+		private void RectWin_DoubleClick(object sender, EventArgs e)
+		{
+			if (Gnd.I.DoubleClickOff)
+				return;
+
+			using (QuickEditTextWin f = new QuickEditTextWin(this, this.RI.Text))
+			{
+				f.ShowDialog();
+
+				string text = f.RetText;
+
+				if (text != this.RI.Text)
+				{
+					text = text.Trim();
+
+					this.RI.Text = text;
+					Gnd.I.SaveData();
+					Gnd.I.AdjustToTextSize = true;
+					this.UpdateUi();
+				}
+			}
 		}
 
 		private void テキストをファイルに保存するSToolStripMenuItem_Click(object sender, EventArgs e)

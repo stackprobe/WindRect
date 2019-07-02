@@ -106,5 +106,10 @@ namespace WindRect
 				this.Close();
 			}
 		}
+
+		private void コピーCtrlCToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.MainText.Copy();
+		}
 	}
 }

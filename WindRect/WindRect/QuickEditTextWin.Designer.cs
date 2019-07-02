@@ -34,6 +34,8 @@
 			this.MainTextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.日付を挿入CtrlDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.日時を挿入CtrlTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this.MainTextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -57,9 +59,11 @@
 			// 
 			this.MainTextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.日付を挿入CtrlDToolStripMenuItem,
-            this.日時を挿入CtrlTToolStripMenuItem});
+            this.日時を挿入CtrlTToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.コピーCtrlCToolStripMenuItem});
 			this.MainTextMenu.Name = "MainTextMenu";
-			this.MainTextMenu.Size = new System.Drawing.Size(174, 48);
+			this.MainTextMenu.Size = new System.Drawing.Size(174, 98);
 			// 
 			// 日付を挿入CtrlDToolStripMenuItem
 			// 
@@ -74,6 +78,18 @@
 			this.日時を挿入CtrlTToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
 			this.日時を挿入CtrlTToolStripMenuItem.Text = "日時を挿入(Ctrl+T)";
 			this.日時を挿入CtrlTToolStripMenuItem.Click += new System.EventHandler(this.日時を挿入CtrlTToolStripMenuItem_Click);
+			// 
+			// コピーCtrlCToolStripMenuItem
+			// 
+			this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
+			this.コピーCtrlCToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl+C)";
+			this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 6);
 			// 
 			// QuickEditTextWin
 			// 
@@ -108,5 +124,7 @@
 		private System.Windows.Forms.ContextMenuStrip MainTextMenu;
 		private System.Windows.Forms.ToolStripMenuItem 日付を挿入CtrlDToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 日時を挿入CtrlTToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem コピーCtrlCToolStripMenuItem;
 	}
 }
