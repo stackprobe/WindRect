@@ -9,7 +9,7 @@ namespace WindRect
 {
 	// sync > @ Utils2
 
-	public class Utils2
+	public static class Utils2
 	{
 		public static string Escape(string str)
 		{

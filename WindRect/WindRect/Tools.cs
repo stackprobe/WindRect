@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WindRect
 {
-	public class Tools
+	public static class Tools
 	{
 		public static int IntRange(int value, int minval, int maxval)
 		{
