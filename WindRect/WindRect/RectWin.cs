@@ -40,6 +40,11 @@ namespace WindRect
 			InitializeComponent();
 		}
 
+		public Gnd.RectInfo GetRI()
+		{
+			return this.RI;
+		}
+
 		private void RectWin_Load(object sender, EventArgs e)
 		{
 			// noop
@@ -335,7 +340,7 @@ namespace WindRect
 
 				string text = f.RetText;
 
-				if (text != this.RI.Text)
+				if (text != this.RI.Text || f.SomethingModified)
 				{
 					text = text.Trim();
 

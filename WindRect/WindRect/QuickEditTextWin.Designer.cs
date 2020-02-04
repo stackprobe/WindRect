@@ -34,8 +34,12 @@
 			this.MainTextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.日付を挿入CtrlDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.日時を挿入CtrlTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+			this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.色CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+			this.文字FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.背景BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MainTextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -61,9 +65,11 @@
             this.日付を挿入CtrlDToolStripMenuItem,
             this.日時を挿入CtrlTToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.コピーCtrlCToolStripMenuItem});
+            this.コピーCtrlCToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.色CToolStripMenuItem});
 			this.MainTextMenu.Name = "MainTextMenu";
-			this.MainTextMenu.Size = new System.Drawing.Size(174, 98);
+			this.MainTextMenu.Size = new System.Drawing.Size(174, 126);
 			// 
 			// 日付を挿入CtrlDToolStripMenuItem
 			// 
@@ -79,6 +85,11 @@
 			this.日時を挿入CtrlTToolStripMenuItem.Text = "日時を挿入(Ctrl+T)";
 			this.日時を挿入CtrlTToolStripMenuItem.Click += new System.EventHandler(this.日時を挿入CtrlTToolStripMenuItem_Click);
 			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 6);
+			// 
 			// コピーCtrlCToolStripMenuItem
 			// 
 			this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
@@ -86,10 +97,33 @@
 			this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl+C)";
 			this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
 			// 
-			// toolStripMenuItem1
+			// 色CToolStripMenuItem
 			// 
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 6);
+			this.色CToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.文字FToolStripMenuItem,
+            this.背景BToolStripMenuItem});
+			this.色CToolStripMenuItem.Name = "色CToolStripMenuItem";
+			this.色CToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.色CToolStripMenuItem.Text = "色(&C)";
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(170, 6);
+			// 
+			// 文字FToolStripMenuItem
+			// 
+			this.文字FToolStripMenuItem.Name = "文字FToolStripMenuItem";
+			this.文字FToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.文字FToolStripMenuItem.Text = "文字(&F)";
+			this.文字FToolStripMenuItem.Click += new System.EventHandler(this.文字FToolStripMenuItem_Click);
+			// 
+			// 背景BToolStripMenuItem
+			// 
+			this.背景BToolStripMenuItem.Name = "背景BToolStripMenuItem";
+			this.背景BToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.背景BToolStripMenuItem.Text = "背景(&B)";
+			this.背景BToolStripMenuItem.Click += new System.EventHandler(this.背景BToolStripMenuItem_Click);
 			// 
 			// QuickEditTextWin
 			// 
@@ -126,5 +160,9 @@
 		private System.Windows.Forms.ToolStripMenuItem 日時を挿入CtrlTToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem コピーCtrlCToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem 色CToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 文字FToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 背景BToolStripMenuItem;
 	}
 }

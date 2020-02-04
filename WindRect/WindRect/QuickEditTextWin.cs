@@ -111,5 +111,77 @@ namespace WindRect
 		{
 			this.MainText.Copy();
 		}
+
+		private void 文字FToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.SelectColor(
+				ref this.ParentWin.GetRI().TextColorR,
+				ref this.ParentWin.GetRI().TextColorG,
+				ref this.ParentWin.GetRI().TextColorB
+				);
+		}
+
+		private void 背景BToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.SelectColor(
+				ref this.ParentWin.GetRI().WinColorR,
+				ref this.ParentWin.GetRI().WinColorG,
+				ref this.ParentWin.GetRI().WinColorB
+				);
+		}
+
+		private void SelectColor(ref int intR, ref int intG, ref int intB)
+		{
+			TextBox tbR = new TextBox();
+			TextBox tbG = new TextBox();
+			TextBox tbB = new TextBox();
+
+			tbR.Text = "" + intR;
+			tbG.Text = "" + intG;
+			tbB.Text = "" + intB;
+
+			// sync > @ _WindRect_SelectColorDlg
+
+			try
+			{
+				int[] defColors = new int[16];
+
+				for (int index = 0; index < 16; index++)
+					defColors[index] = index * 0x081008 + 0x800000;
+
+				Color color;
+
+				{
+					int r = int.Parse(tbR.Text) & 0xff;
+					int g = int.Parse(tbG.Text) & 0xff;
+					int b = int.Parse(tbB.Text) & 0xff;
+
+					color = Color.FromArgb(r, g, b);
+				}
+
+				if (SaveLoadDialogs.SelectColor(ref color, defColors))
+				{
+					int r = color.R;
+					int g = color.G;
+					int b = color.B;
+
+					tbR.Text = "" + r;
+					tbG.Text = "" + g;
+					tbB.Text = "" + b;
+				}
+			}
+			catch
+			{ }
+
+			// < sync
+
+			intR = int.Parse(tbR.Text);
+			intG = int.Parse(tbG.Text);
+			intB = int.Parse(tbB.Text);
+
+			this.SomethingModified = true;
+		}
+
+		public bool SomethingModified = false;
 	}
 }

@@ -5,4 +5,4 @@ COPY /B Readme_man.txt out\Readme.txt
 
 C:\Factory\SubTools\zip.exe /O out WindRect
 
-PAUSE
+IF NOT "%1" == "/-P" PAUSE
