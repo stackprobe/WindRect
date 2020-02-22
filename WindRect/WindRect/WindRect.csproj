@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="GlobalProcMtx.cs" />
     <Compile Include="Ground.cs" />
+    <Compile Include="I4Rect.cs" />
     <Compile Include="PosColorWin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -149,5 +149,53 @@ namespace WindRect
 		}
 
 		// < sync
+
+		public static IEnumerable<I4Rect> GetAllScreen()
+		{
+			foreach (Screen screen in Screen.AllScreens)
+			{
+				yield return new I4Rect()
+				{
+					L = screen.Bounds.Left,
+					T = screen.Bounds.Top,
+					W = screen.Bounds.Width,
+					H = screen.Bounds.Height,
+				};
+			}
+		}
+
+		public static bool IsCrashed(I4Rect a, I4Rect b)
+		{
+			return
+				a.L < b.R && b.L < a.R &&
+				a.T < b.B && b.T < a.B;
+		}
+
+		public static bool IntoScreen(I4Rect screen, ref I4Rect win)
+		{
+			bool ret = false;
+
+			if (screen.R < win.R)
+			{
+				win.L = screen.R - win.W;
+				ret = true;
+			}
+			if (win.L < screen.L)
+			{
+				win.L = screen.L;
+				ret = true;
+			}
+			if (screen.B < win.B)
+			{
+				win.T = screen.B - win.H;
+				ret = true;
+			}
+			if (win.T < screen.T)
+			{
+				win.T = screen.T;
+				ret = true;
+			}
+			return ret;
+		}
 	}
 }

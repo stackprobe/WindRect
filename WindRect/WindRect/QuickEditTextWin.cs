@@ -34,10 +34,25 @@ namespace WindRect
 
 		private void QuickEditTextWin_Shown(object sender, EventArgs e)
 		{
-			this.Left = this.ParentWin.Left;
-			this.Top = this.ParentWin.Top;
-			this.Width = Math.Max(300, this.ParentWin.Width + 50);
-			this.Height = Math.Max(300, this.ParentWin.Height + 50);
+			{
+				I4Rect win = new I4Rect()
+				{
+					L = this.ParentWin.Left,
+					T = this.ParentWin.Top,
+					W = Math.Max(300, this.ParentWin.Width + 50),
+					H = Math.Max(300, this.ParentWin.Height + 50),
+				};
+
+				foreach (I4Rect screen in Tools.GetAllScreen())
+					if (Tools.IsCrashed(screen, win))
+						if (Tools.IntoScreen(screen, ref win)) // FIXME ???
+							break;
+
+				this.Left = win.L;
+				this.Top = win.T;
+				this.Width = win.W;
+				this.Height = win.H;
+			}
 
 			Tools.PostShown(this);
 		}
