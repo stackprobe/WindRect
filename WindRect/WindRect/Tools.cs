@@ -171,31 +171,21 @@ namespace WindRect
 				a.T < b.B && b.T < a.B;
 		}
 
-		public static bool IntoScreen(I4Rect screen, ref I4Rect win)
+		public static I4Rect IntoScreen(I4Rect screen, I4Rect win)
 		{
-			bool ret = false;
-
 			if (screen.R < win.R)
-			{
 				win.L = screen.R - win.W;
-				ret = true;
-			}
+
 			if (win.L < screen.L)
-			{
 				win.L = screen.L;
-				ret = true;
-			}
+
 			if (screen.B < win.B)
-			{
 				win.T = screen.B - win.H;
-				ret = true;
-			}
+
 			if (win.T < screen.T)
-			{
 				win.T = screen.T;
-				ret = true;
-			}
-			return ret;
+
+			return win;
 		}
 	}
 }

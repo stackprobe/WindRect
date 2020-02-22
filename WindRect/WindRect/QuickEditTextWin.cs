@@ -43,10 +43,11 @@ namespace WindRect
 					H = Math.Max(300, this.ParentWin.Height + 50),
 				};
 
-				foreach (I4Rect screen in Tools.GetAllScreen())
-					if (Tools.IsCrashed(screen, win))
-						if (Tools.IntoScreen(screen, ref win)) // FIXME ???
-							break;
+				foreach (I4Rect screen in Tools.GetAllScreen().Where(screen => Tools.IsCrashed(screen, win)))
+				{
+					win = Tools.IntoScreen(screen, win);
+					break;
+				}
 
 				this.Left = win.L;
 				this.Top = win.T;
