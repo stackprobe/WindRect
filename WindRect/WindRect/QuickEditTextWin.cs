@@ -198,6 +198,27 @@ namespace WindRect
 			this.SomethingModified = true;
 		}
 
+		private void FontSizeTo10_Click(object sender, EventArgs e)
+		{
+			this.FontSizeTo(10);
+		}
+
+		private void FontSizeTo20_Click(object sender, EventArgs e)
+		{
+			this.FontSizeTo(20);
+		}
+
+		private void FontSizeTo30_Click(object sender, EventArgs e)
+		{
+			this.FontSizeTo(30);
+		}
+
+		private void FontSizeTo(int size)
+		{
+			this.ParentWin.GetRI().TextSize = size;
+			this.SomethingModified = true;
+		}
+
 		public bool SomethingModified = false;
 	}
 }
