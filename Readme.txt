@@ -7,7 +7,7 @@ WindRect
 ビルド済み配布物
 ----------------
 
-http://stackprobe.dip.jp/WindRect
+http://stackprobe.ccsp.mydns.jp/WindRect
 
 
 マニュアル
